@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_inquiryVAMandiri</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>12d8ad0b-02e6-4e45-8c31-7e0a7d1752e5</testSuiteGuid>
+   <testCaseLink>
+      <guid>63e3ecc4-bf34-4609-9fec-8cac8b2427d0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Virtual_Account/TC_inquiryVAMandiri</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>bf97d6a1-4505-4719-8a76-2509f8709ad1</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Virtual_Account/DTF_inquiryVAMandiri</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>bf97d6a1-4505-4719-8a76-2509f8709ad1</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>trace_number</value>
+         <variableId>29666a26-3f0a-40f3-8ab5-87229c0c6d11</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>bf97d6a1-4505-4719-8a76-2509f8709ad1</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>expected_rc</value>
+         <variableId>16ecf20b-3fff-4941-b0af-3a35034c0e10</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>8ba493dd-3a5b-4394-bbd2-fe0568e7655f</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

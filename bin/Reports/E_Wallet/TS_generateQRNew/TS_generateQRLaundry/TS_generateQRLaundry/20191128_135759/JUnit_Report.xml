@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="TS_generateQRLaundry" time="3" tests="0" failures="0" errors="1">
+    <testsuite name="TS_generateQRLaundry" tests="0" failures="0" errors="1" time="3" timestamp="2019-11-28 13:58:01" hostname="Silvi - LAPTOP-ALMT97O4" id="Test Suites/E_Wallet/TS_generateQRNew/TS_generateQRLaundry/TS_generateQRLaundry">
+        <properties>
+            <property name="deviceName" value=""/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_generateQRNew\\TS_generateQRLaundry\\TS_generateQRLaundry\\20191128_135759"/>
+            <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_generateQRNew\\TS_generateQRLaundry\\TS_generateQRLaundry\\20191128_135759\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Silvi - LAPTOP-ALMT97O4"/>
+            <property name="hostAddress" value="192.168.4.154"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.2.2.4"/>
+        </properties>
+        <testcase name="Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry" classname="Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry" status="ERROR">
+            <error type="ERROR" message="Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry FAILED.&#xA;Reason:&#xA;java.lang.NullPointerException: Cannot invoke method getBytes() on null object&#xD;&#xA;&#x9;at id.texo.ewallet.secure.SecureUtils.decryptAesQR(EwalletSecure.groovy:204)&#xD;&#xA;&#x9;at id.texo.ewallet.secure.SecureUtils$decryptAesQR$1.call(Unknown Source)&#xD;&#xA;&#x9;at TC_generateQRLaundry.run(TC_generateQRLaundry:111)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;&#xA;&#x9;at TempTestSuite1574924279464.run(TempTestSuite1574924279464.groovy:35)&#xD;&#xA;"/>
+            <system-out>2019-11-28 13:58:02 - [TEST_CASE][ERROR] - Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry: Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry FAILED.
+Reason:
+java.lang.NullPointerException: Cannot invoke method getBytes() on null object&#xD;
+	at id.texo.ewallet.secure.SecureUtils.decryptAesQR(EwalletSecure.groovy:204)&#xD;
+	at id.texo.ewallet.secure.SecureUtils$decryptAesQR$1.call(Unknown Source)&#xD;
+	at TC_generateQRLaundry.run(TC_generateQRLaundry:111)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1574924279464.run(TempTestSuite1574924279464.groovy:35)&#xD;
+&#xD;
+&#xD;
+2019-11-28 13:58:02 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + ""," + ""chip_id":"" + var_chip_id + ""," + ""raspberry_id":"" + var_raspberry_id + ""," + ""action":"" + var_action + ""," + ""pixel_size":"" + var_pixel_size + ""}": null&#xD;
+&#xD;
+2019-11-28 13:58:02 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-11-28 13:58:02 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - body = "{"organisation_id":"" + var_organisation_id + ""," + ""data":"" + encipheredData + ""," + ""lang":"" + var_lang + ""}": null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - defaultHeaders = Arrays.asList(header1, header2): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_generateQRLaundry"): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - request.setHttpHeaderProperties(defaultHeaders): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - println(hostname): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - println(request.getRestUrl()): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-11-28 13:58:03 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-11-28 13:58:05 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_generateQRNew\TS_generateQRLaundry\TS_generateQRLaundry\20191128_135759\requests\main\0.har&#xD;
+&#xD;
+2019-11-28 13:58:05 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - println(body_content): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - result = verifyEqual(response_code, rc_ref.getRCName()): Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-11-28 13:58:05 - [MESSAGE][PASSED] - Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - if (result == false): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - else: null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - verifyEqual(statusCode, rc_ref.getHttpResponse()): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-11-28 13:58:05 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - if (rc_ref == RC00): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - decipheredResponseData = SecureUtils.decryptAesEwallet(data, var_aes_key): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - decipheredRespDataMap = JsonSlurper().parseText(decipheredResponseData): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - out.println(decipheredRespDataMap): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - dechiperedResponse = new java.lang.String(decipheredResponseData): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - println(dechiperedResponse): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - abdu = JsonSlurper().parseText(dechiperedResponse): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - abdu2 = qr_image: null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - filename = "D:\QR_Laundry\qr_temp_" + System.currentTimeMillis() + ".png": null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - TexoUtils.export(abdu2, filename): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - println(abdu2): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - hintMap = new java.util.HashMap(): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - hintMap.put(ERROR_CORRECTION, L): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - result = TexoUtils.readQRCode(filename, "UTF-8", hintMap): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - println(result): null&#xD;
+&#xD;
+2019-11-28 13:58:05 - [TEST_STEP][PASSED] - decipheredResponseDataQR = SecureUtils.decryptAesQR(result, var_aes_key_QR): null</system-out>
+            <system-err>2019-11-28 13:58:02 - [TEST_CASE][ERROR] - Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry: Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry FAILED.
+Reason:
+java.lang.NullPointerException: Cannot invoke method getBytes() on null object&#xD;
+	at id.texo.ewallet.secure.SecureUtils.decryptAesQR(EwalletSecure.groovy:204)&#xD;
+	at id.texo.ewallet.secure.SecureUtils$decryptAesQR$1.call(Unknown Source)&#xD;
+	at TC_generateQRLaundry.run(TC_generateQRLaundry:111)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1574924279464.run(TempTestSuite1574924279464.groovy:35)</system-err>
+        </testcase>
+        <system-out>2019-11-28 13:58:01 - [TEST_SUITE][INCOMPLETE] - TS_generateQRLaundry: null</system-out>
+        <system-err>2019-11-28 13:58:01 - [TEST_SUITE][INCOMPLETE] - TS_generateQRLaundry: null</system-err>
+    </testsuite>
+</testsuites>

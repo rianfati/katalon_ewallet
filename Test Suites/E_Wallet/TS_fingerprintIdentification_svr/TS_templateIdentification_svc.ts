@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_templateIdentification_svc</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>4704224f-917b-4c95-9de7-4b6874aaf16a</testSuiteGuid>
+   <testCaseLink>
+      <guid>dc29cc95-5880-41eb-9451-01fd26a13ec4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/E_Wallet/API_Template_Identification (svc)/Template_identification</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>2c4bbbe1-09d7-4ece-be3d-0219b0c7f88a</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/E_Wallet/DF_fingerprintIdentification/DF_templateIdentification</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>2c4bbbe1-09d7-4ece-be3d-0219b0c7f88a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_template</value>
+         <variableId>924c75c5-3664-4cd1-99bd-059f1d42a527</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>2c4bbbe1-09d7-4ece-be3d-0219b0c7f88a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_request_id</value>
+         <variableId>72c643fa-8f6c-4fd9-8e26-31db53997ac5</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>2c4bbbe1-09d7-4ece-be3d-0219b0c7f88a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_expected_rc</value>
+         <variableId>8f65ec32-4cbb-449b-8cc0-7c90e7bbb542</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>7a4a7da7-2839-4fbc-a244-39f1323a125b</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

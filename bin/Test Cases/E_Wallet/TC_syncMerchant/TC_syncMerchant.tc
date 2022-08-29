@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_syncMerchant</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4f735ce3-9077-4a5c-83e1-6c5e97ae7696</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d6524b8a-922d-460c-bc8d-e0431b765c86</id>
+      <masked>false</masked>
+      <name>var_page</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>22362a7a-2b44-4fff-95eb-700f4985a040</id>
+      <masked>false</masked>
+      <name>var_page_size</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>cd60dd2e-2ab5-4b19-a007-dc4a5981e583</id>
+      <masked>false</masked>
+      <name>var_date</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ba4f5e43-5402-4fcc-ab84-5c987ac4380a</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+</TestCaseEntity>

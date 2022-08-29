@@ -1,0 +1,778 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_changePinAccessCode,,,,2019-12-17 10:48:36,2019-12-17 10:48:43,7.858s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/rian_project_Login_Customer_Rian,,,,2019-12-17 10:48:36,2019-12-17 10:48:38,2.527s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:36,2019-12-17 10:48:37,0.982s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"pin"":"""" + var_enciphered_pin + """","" + """"device_id"":"""" + var_device_id + """","" + """"fcm_token"":"""" + var_fcm_token + """"}""",,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.006s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.021s,PASSED
+"body = ""{""organisation_id"":""1"",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.000s,PASSED
+"request = findTestObject(""Account/obj_loginCustomer"")",,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.039s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:37,2019-12-17 10:48:37,0.008s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:37,2019-12-17 10:48:38,0.770s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.007s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.015s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.012s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.022s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.004s,PASSED
+if (rc_ref == RC00),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.006s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:38,2019-12-17 10:48:39,0.372s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.003s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.002s,PASSED
+out.println(body),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.041s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.004s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:38,2019-12-17 10:48:38,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:38,2019-12-17 10:48:39,0.147s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.004s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.316s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.003s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.042s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.215s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.006s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.006s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.204s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.006s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.007s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.005s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+out.println(plain),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+out.println(body),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.050s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.083s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.161s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.031s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.088s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.003s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.153s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.003s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.033s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.081s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:39,2019-12-17 10:48:40,0.156s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.001s,PASSED
+out.println(body),,,,2019-12-17 10:48:39,2019-12-17 10:48:39,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:39,2019-12-17 10:48:40,0.040s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.080s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.180s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.051s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.089s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.138s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.027s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.076s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.172s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.025s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.120s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.233s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(body),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.050s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.142s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.003s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:40,2019-12-17 10:48:41,0.161s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.001s,PASSED
+out.println(body),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.031s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:40,2019-12-17 10:48:40,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:40,2019-12-17 10:48:41,0.100s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.003s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.183s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.041s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.112s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.167s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(body),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.048s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.095s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.159s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.026s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.102s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.155s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.024s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.104s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.146s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.026s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.098s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:42,0.159s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.028s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.106s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:41,2019-12-17 10:48:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:41,2019-12-17 10:48:42,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.169s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.029s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.114s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.149s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.027s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.098s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.265s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.052s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.175s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.145s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.049s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.058s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.120s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.003s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.031s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.054s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.119s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(body),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.024s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.066s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.003s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:42,2019-12-17 10:48:42,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:42,2019-12-17 10:48:43,0.104s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.024s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.053s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.132s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.026s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.078s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.202s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.003s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.046s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(hostname),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.122s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.174s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(plain),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.030s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.119s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.127s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.030s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.073s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_changePinAccessCode/TC_changePinAccessCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.126s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.002s,PASSED
+"var_enciphered_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"var_enciphered_confirm_new_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_confirm_new_pin)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"plain = ""{"" + """"old_pin"":"""" + var_enciphered_pin + """","" + """"new_pin"":"""" + var_enciphered_new_pin + """","" + """"confirm_pin"":"""" + var_enciphered_confirm_new_pin + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+out.println(plain),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + var_lang + """"}""",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(body),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_changePinAccessCode"")",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.036s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+println(hostname),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.059s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.001s,PASSED
+if (rc_ref.getRCName() == RC00),,,,2019-12-17 10:48:43,2019-12-17 10:48:43,0.000s,PASSED

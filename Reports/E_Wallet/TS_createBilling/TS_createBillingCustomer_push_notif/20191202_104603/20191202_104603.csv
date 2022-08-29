@@ -1,0 +1,25 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_createBillingCustomer_push_notif,,,,2019-12-02 10:46:05,2019-12-02 10:46:08,3.270s,INCOMPLETE
+,,,,,,,
+Test Cases/E_Wallet/TC_createBilling/TC_createBillingCustomer_Update_Send_Notif,,,,2019-12-02 10:46:05,2019-12-02 10:46:08,3.065s,FAILED
+trace_number = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-02 10:46:06,2019-12-02 10:46:06,0.002s,PASSED
+trace_number = Math.random() * 10000000,,,,2019-12-02 10:46:06,2019-12-02 10:46:06,0.016s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"trx_type_id"":"""" + var_trx_type_id + """","" + """"wallet_id"":"""" + var_wallet_id + """","" + """"to"":"""" + var_to + """","" + """"to_id"":"""" + var_to_id + """","" + """"amount"":"""" + var_amount + """","" + """"billing_ref1"":"""" + var_billing_ref1 + """","" + """"billing_ref2"":"""" + var_billing_ref2 + """","" + """"billing_ref3"":"""" + var_billing_ref3 + """","" + """"trace_number"":""TN"" + trace_number + """","" + """"need_verify"":"""" + var_need_verify + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"qr_unique_code"":"""" + var_unique_code + """"}""",,,,2019-12-02 10:46:06,2019-12-02 10:46:06,0.004s,PASSED
+out.println(plain),,,,2019-12-02 10:46:06,2019-12-02 10:46:06,0.012s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-02 10:46:06,2019-12-02 10:46:06,0.002s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-02 10:46:06,2019-12-02 10:46:06,0.003s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-02 10:46:06,2019-12-02 10:46:07,1.006s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-02 10:46:07,2019-12-02 10:46:07,0.003s,PASSED
+out.println(body),,,,2019-12-02 10:46:07,2019-12-02 10:46:07,0.007s,PASSED
+"request = findTestObject(""E_Wallet/obj_createBillingCustomer"")",,,,2019-12-02 10:46:07,2019-12-02 10:46:07,0.217s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-02 10:46:07,2019-12-02 10:46:07,0.013s,PASSED
+response = sendRequest(request),,,,2019-12-02 10:46:07,2019-12-02 10:46:08,1.018s,PASSED
+body_content = responseBodyContent,,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.007s,PASSED
+status_code = statusCode,,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.020s,PASSED
+out.println(respDataMap),,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.002s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.020s,PASSED
+out.println(var_expected_rc),,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.003s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.002s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-02 10:46:08,2019-12-02 10:46:08,0.038s,FAILED

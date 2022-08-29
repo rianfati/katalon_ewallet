@@ -1,0 +1,585 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_addRegyt,,,,2019-12-18 10:06:16,2019-12-18 10:06:26,10.103s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginMerchant/TC_loginMerchantSysAdmin,,,,2019-12-18 10:06:17,2019-12-18 10:06:20,3.003s,PASSED
+"var_enciphered_password = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_password)",,,,2019-12-18 10:06:17,2019-12-18 10:06:18,1.065s,PASSED
+"plain = ""{"" + """"email_address"":"""" + var_email_address + """","" + """"user_agent"":"""" + var_user_agent + """","" + """"password"":"""" + var_enciphered_password + """"}""",,,,2019-12-18 10:06:18,2019-12-18 10:06:18,0.001s,PASSED
+out.println(plain),,,,2019-12-18 10:06:18,2019-12-18 10:06:18,0.005s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:18,2019-12-18 10:06:18,0.019s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:18,2019-12-18 10:06:18,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:18,2019-12-18 10:06:18,0.001s,PASSED
+"request = findTestObject(""Account/obj_loginMerchant"")",,,,2019-12-18 10:06:18,2019-12-18 10:06:19,0.043s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:19,2019-12-18 10:06:19,0.008s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:19,2019-12-18 10:06:20,0.997s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.004s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+out.println(body_content),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.012s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.004s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.017s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.019s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.006s,PASSED
+if (rc_ref == RC00),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.008s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.685s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.009s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+out.println(plain),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.006s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.005s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.058s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.381s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.003s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+println(body_content),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.004s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.002s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:20,2019-12-18 10:06:21,0.407s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+out.println(plain),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.036s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:20,2019-12-18 10:06:20,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:20,2019-12-18 10:06:21,0.332s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.409s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.041s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.311s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.002s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.002s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.002s,PASSED
+println(body_content),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:21,2019-12-18 10:06:22,1.203s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.001s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.030s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:21,2019-12-18 10:06:21,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:21,2019-12-18 10:06:22,1.135s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.005s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:22,2019-12-18 10:06:23,0.208s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+out.println(plain),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.040s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:22,2019-12-18 10:06:22,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:22,2019-12-18 10:06:23,0.115s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.399s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.068s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.277s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.256s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.036s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.159s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:23,2019-12-18 10:06:24,0.411s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.001s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.037s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:23,2019-12-18 10:06:23,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:23,2019-12-18 10:06:24,0.323s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.243s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.036s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.167s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.235s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.049s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.148s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.220s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.055s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.124s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:24,2019-12-18 10:06:25,0.262s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+out.println(body),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.071s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:24,2019-12-18 10:06:24,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:24,2019-12-18 10:06:25,0.137s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.006s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.200s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.029s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.130s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.215s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(plain),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.039s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.108s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.195s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.031s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.137s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.121s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.028s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.065s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:25,2019-12-18 10:06:26,0.215s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.031s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:25,2019-12-18 10:06:25,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:25,2019-12-18 10:06:26,0.154s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+println(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.140s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.031s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.073s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.163s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.033s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.100s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_addRegyt/TC_addRegyt,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.630s,PASSED
+trace_numbera = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numbera = Math.random() * 10000,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numberb = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+trace_numberb = Math.random() * 10000,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""imei"":"""" + var_imei + """" + trace_numbera + """",""token_code"":"""" + var_token_code + """" + trace_numberb + """"}""",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(plain),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(body),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_addRegyt"")",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.043s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+response = sendRequest(request),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.551s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+println(body_content),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 10:06:26,2019-12-18 10:06:26,0.002s,PASSED

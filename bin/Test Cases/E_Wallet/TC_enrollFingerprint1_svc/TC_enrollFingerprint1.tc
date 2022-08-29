@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_enrollFingerprint1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7dd65755-f290-41fa-a70b-a0c83f1c8f9a</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b01e118f-d96f-470f-9c84-fe3d0d54b2a0</id>
+      <masked>false</masked>
+      <name>var_image</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ec5b9343-797f-4e6b-83d4-9043fa563d1b</id>
+      <masked>false</masked>
+      <name>var_user_id</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>25e25443-435d-465d-aad7-add2928c8a30</id>
+      <masked>false</masked>
+      <name>var_request_id</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>0881c330-29d7-4c17-b177-8f6d5aaf829a</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b6d85136-c7ff-4f1a-b6b9-8cce1267d194</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,66 @@
+[35m[Appium][39m Welcome to Appium v1.13.0
+[35m[Appium][39m Non-default server args:
+[35m[Appium][39m   port: 51495
+[35m[Appium][39m   loglevel: info
+[35m[Appium][39m   chromeDriverPort: 51496
+[35m[Appium][39m   tmpDir: C:\Users\rianfati\AppData\Local\Temp\\Katalon\Appium\Temp1564132402535
+[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:51495
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m8 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session[39m
+[35m[HTTP][39m [90m{"desiredCapabilities":{"app":"C:\\Users\\rianfati\\Desktop\\EriBank.apk","noReset":true,"newCommandTimeout":1800,"platformVersion":"9","automationName":"uiautomator2","autoGrantPermissions":true,"platformName":"Android","udid":"5200b3e84d8d5583","deviceName":"samsung SM-A600G (Android 9)","fullReset":false,"platform":"ANDROID"},"capabilities":{"firstMatch":[{"appium:app":"C:\\Users\\rianfati\\Desktop\\EriBank.apk","appium:autoGrantPermissions":true,"appium:automationName":"uiautomator2","appium:deviceName":"samsung SM-A600G (Android 9)","appium:fullReset":false,"appium:newCommandTimeout":1800,"appium:noReset":true,"platform":"ANDROID","platformName":"android","appium:platformVersion":"9","appium:udid":"5200b3e84d8d5583"}]}}[39m
+[35m[BaseDriver][39m The capabilities ["platform"] are not standard capabilities and should have an extension prefix
+[35m[Appium][39m Appium v1.13.0 creating new AndroidUiautomator2Driver (v1.33.1) session
+[35m[Appium][39m Capabilities:
+[35m[Appium][39m   platform: ANDROID
+[35m[Appium][39m   platformName: android
+[35m[Appium][39m   app: C:\Users\rianfati\Desktop\EriBank.apk
+[35m[Appium][39m   autoGrantPermissions: true
+[35m[Appium][39m   automationName: uiautomator2
+[35m[Appium][39m   deviceName: samsung SM-A600G (Android 9)
+[35m[Appium][39m   fullReset: false
+[35m[Appium][39m   newCommandTimeout: 1800
+[35m[Appium][39m   noReset: true
+[35m[Appium][39m   platformVersion: 9
+[35m[Appium][39m   udid: 5200b3e84d8d5583
+[35m[BaseDriver][39m The following capabilities were provided, but are not recognized by appium: platform.
+[35m[BaseDriver][39m Session created with session id: 99bf1f0c-a5de-4fa0-ac3a-a6e1374219cb
+[35m[BaseDriver][39m Using local app 'C:\Users\rianfati\Desktop\EriBank.apk'
+[35m[ADB][39m Found 1 'build-tools' folders under 'C:\Users\rianfati\.katalon\tools\android_sdk' (newest first):
+[35m[ADB][39m     C:/Users/rianfati/.katalon/tools/android_sdk/build-tools/28.0.3
+[35m[ADB][39m Using 'adb.exe' from 'C:\Users\rianfati\.katalon\tools\android_sdk\platform-tools\adb.exe'
+[35m[AndroidDriver][39m Retrieving device list
+[35m[AndroidDriver][39m Using device: 5200b3e84d8d5583
+[35m[ADB][39m Using 'adb.exe' from 'C:\Users\rianfati\.katalon\tools\android_sdk\platform-tools\adb.exe'
+[35m[UiAutomator2][39m Relaxing hidden api policy
+[35m[ADB][39m Using the alternative activity name detection method because of: Could not find 'apkanalyzer.bat' in ["C:\\Users\\rianfati\\.katalon\\tools\\android_sdk\\platform-tools\\apkanalyzer.bat","C:\\Users\\rianfati\\.katalon\\tools\\android_sdk\\emulator\\apkanalyzer.bat","C:\\Users\\rianfati\\.katalon\\tools\\android_sdk\\tools\\apkanalyzer.bat","C:\\Users\\rianfati\\.katalon\\tools\\android_sdk\\tools\\bin\\apkanalyzer.bat","C:\\Users\\rianfati\\.katalon\\tools\\android_sdk\\build-tools\\28.0.3\\apkanalyzer.bat"]. Do you have Android Build Tools installed at 'C:\Users\rianfati\.katalon\tools\android_sdk'?
+[35m[ADB][39m Using 'aapt.exe' from 'C:\Users\rianfati\.katalon\tools\android_sdk\build-tools\28.0.3\aapt.exe'
+[35m[ADB][39m Extracting package and launch activity from manifest
+[35m[ADB][39m Package name: 'com.experitest.ExperiBank'
+[35m[ADB][39m Main activity name: 'com.experitest.ExperiBank.LoginActivity'
+[35m[ADB][39m Using 'apksigner.bat' from 'C:\Users\rianfati\.katalon\tools\android_sdk\build-tools\28.0.3\apksigner.bat'
+[35m[ADB][39m Using 'zipalign.exe' from 'C:\Users\rianfati\.katalon\tools\android_sdk\build-tools\28.0.3\zipalign.exe'
+[35m[UiAutomator2][39m Server packages are going to be (re)installed
+[35m[UiAutomator2][39m Full packages reinstall is going to be performed
+[35m[ADB][39m io.appium.uiautomator2.server was successfully uninstalled
+[35m[ADB][39m The application at 'C:\Users\rianfati\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-v3.5.1.apk' is already cached to '/data/local/tmp/appium_cache/56abf1bf10f6562619a2dd8fb060718e27c4cb28.apk'
+[35m[ADB][39m The installation of 'appium-uiautomator2-server-v3.5.1.apk' took 4.401s
+[35m[ADB][39m io.appium.uiautomator2.server.test was successfully uninstalled
+[35m[ADB][39m The application at 'C:\Users\rianfati\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-debug-androidTest.apk' is already cached to '/data/local/tmp/appium_cache/c6e9cdfe0da1784c2c695fae7c66184003868a40.apk'
+[35m[ADB][39m The installation of 'appium-uiautomator2-server-debug-androidTest.apk' took 2.607s
+[35m[UiAutomator2][39m Starting UIAutomator2 server 3.5.1
+[35m[UiAutomator2][39m Using UIAutomator2 server from 'C:\Users\rianfati\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-v3.5.1.apk' and test from 'C:\Users\rianfati\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-debug-androidTest.apk'
+[35m[UiAutomator2][39m Waiting up to 30000ms for UiAutomator2 to be online...
+[35m[UiAutomator2][39m The instrumentation process has been unexpectedly terminated. Retrying UiAutomator2 startup (#1 of 1)
+[35m[ADB][39m No 'uiautomator' process has been found
+[35m[UiAutomator2][39m Waiting up to 30000ms for UiAutomator2 to be online...
+[35m[UiAutomator2][39m Did not get confirmation UiAutomator2 deleteSession worked; Error was: UnknownError: An unknown server-side error occurred while processing the command. Original error: Trying to proxy a session command without session id
+[35m[UiAutomator2][39m Restoring hidden api policy to the device default configuration
+[35m[HTTP][39m [37m<-- POST /wd/hub/session [39m[31m500[39m [90m20753 ms - 841[39m
+[35m[HTTP][39m [90m[39m

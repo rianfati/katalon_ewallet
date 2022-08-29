@@ -1,0 +1,59 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Emoney_Payment_Update_Send_Notif,,,,2019-12-02 10:37:18,2019-12-02 10:37:22,4.053s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/rian_project_Login_Customer_CICD,,,,2019-12-02 10:37:18,2019-12-02 10:37:22,3.364s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, login_access_code)",,,,2019-12-02 10:37:19,2019-12-02 10:37:20,1.085s,PASSED
+model = model,,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.001s,PASSED
+println(model),,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.002s,PASSED
+plain = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.001s,PASSED
+println(cicdphonenumber),,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.001s,PASSED
+global_phone_number = cicdphonenumber,,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.000s,PASSED
+"if (model == ""0"")",,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.000s,PASSED
+else,,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.002s,PASSED
+out.println(plain),,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.005s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, aes_key_org_texo)",,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.020s,PASSED
+"body = ""{""organisation_id"":"""" + organisation_id + """",""data"":"""" + encipheredData + """",""lang"":"""" + lang + """"}""",,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.001s,PASSED
+out.println(body),,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.001s,PASSED
+"request = findTestObject(""Account/obj_loginCustomer"")",,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.042s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-02 10:37:20,2019-12-02 10:37:20,0.012s,PASSED
+response = sendRequest(request),,,,2019-12-02 10:37:20,2019-12-02 10:37:21,1.226s,PASSED
+body_content = responseBodyContent,,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.006s,PASSED
+status_code = statusCode,,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.016s,PASSED
+out.println(respDataMap),,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.003s,PASSED
+rc_ref = expected_rc).getEnumRC(),,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.016s,PASSED
+out.println(expected_rc),,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-02 10:37:21,2019-12-02 10:37:21,0.002s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-02 10:37:21,2019-12-02 10:37:22,0.027s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.006s,PASSED
+if (rc_ref == RC00),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.007s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/rian_project_Emoney_Payment/rian_project_Emoney_Payment,,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.469s,FAILED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_pin)",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.005s,PASSED
+partner_token = var_partner_token,,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+plain = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+"if (model == ""0"")",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+"else if (model == ""1"")",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.003s,PASSED
+out.println(plain),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.003s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+out.println(body),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.000s,PASSED
+"request = findTestObject(""E_Wallet/payment_url"")",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.049s,PASSED
+out.println(request.getRestUrl()),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.002s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+else,,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.002s,PASSED
+response = sendRequest(request),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.158s,PASSED
+println(partner_token),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+body_content = responseBodyContent,,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+status_code = statusCode,,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-02 10:37:22,2019-12-02 10:37:22,0.022s,FAILED

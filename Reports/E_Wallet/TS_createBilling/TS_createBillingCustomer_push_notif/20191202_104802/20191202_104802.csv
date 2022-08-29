@@ -1,0 +1,46 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_createBillingCustomer_push_notif,,,,2019-12-02 10:48:04,2019-12-02 10:48:07,3.159s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/Login_Customer_Rian,,,,2019-12-02 10:48:04,2019-12-02 10:48:06,2.627s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-02 10:48:04,2019-12-02 10:48:05,0.950s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"pin"":"""" + var_enciphered_pin + """","" + """"device_id"":"""" + var_device_id + """","" + """"fcm_token"":"""" + var_fcm_token + """"}""",,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.001s,PASSED
+out.println(plain),,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.007s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.021s,PASSED
+"body = ""{""organisation_id"":""1"",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.000s,PASSED
+out.println(body),,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.000s,PASSED
+"request = findTestObject(""Account/obj_loginCustomer"")",,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.047s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-02 10:48:05,2019-12-02 10:48:05,0.009s,PASSED
+response = sendRequest(request),,,,2019-12-02 10:48:05,2019-12-02 10:48:06,0.871s,PASSED
+body_content = responseBodyContent,,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.004s,PASSED
+status_code = statusCode,,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.016s,PASSED
+out.println(respDataMap),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.003s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.014s,PASSED
+out.println(var_expected_rc),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.018s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.005s,PASSED
+if (rc_ref == RC00),,,,2019-12-02 10:48:06,2019-12-02 10:48:06,0.008s,PASSED
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/Login_Customer_Rian,,,,2019-12-02 10:48:06,2019-12-02 10:48:07,0.316s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.003s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"pin"":"""" + var_enciphered_pin + """","" + """"device_id"":"""" + var_device_id + """","" + """"fcm_token"":"""" + var_fcm_token + """"}""",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+out.println(plain),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+"body = ""{""organisation_id"":""1"",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.000s,PASSED
+out.println(body),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.000s,PASSED
+"request = findTestObject(""Account/obj_loginCustomer"")",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.039s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.155s,PASSED
+body_content = responseBodyContent,,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+status_code = statusCode,,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.001s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.003s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.004s,PASSED
+if (rc_ref == RC00),,,,2019-12-02 10:48:07,2019-12-02 10:48:07,0.005s,PASSED

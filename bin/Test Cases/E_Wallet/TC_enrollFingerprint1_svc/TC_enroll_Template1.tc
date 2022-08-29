@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_enroll_Template1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f03b1a6f-216e-4191-b053-e924ff448b30</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>230a19d2-6c45-4fa5-b20c-0bc96bbb1b4c</id>
+      <masked>false</masked>
+      <name>var_template</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b435c0a1-65bd-49fc-9e84-b2f3b8562d07</id>
+      <masked>false</masked>
+      <name>var_user_id</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>966bc9c0-f679-4220-8748-b681d5daa082</id>
+      <masked>false</masked>
+      <name>var_request_id</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>b4aeb498-d9cf-47b1-a252-536590fee8b1</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ec621a76-bf51-43f8-854e-82f51b41f717</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+</TestCaseEntity>

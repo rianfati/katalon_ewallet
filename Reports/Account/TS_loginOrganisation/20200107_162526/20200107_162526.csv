@@ -1,0 +1,14 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_loginOrganisation,,,,2020-01-07 16:25:28,2020-01-07 16:25:53,24.471s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginOrganisation/TC_loginOrganisation,,,,2020-01-07 16:25:28,2020-01-07 16:25:53,24.217s,FAILED
+"var_enciphered_password = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_password)",,,,2020-01-07 16:25:29,2020-01-07 16:25:30,1.319s,PASSED
+"plain = ""{""email_address"":"""" + var_email_address + """","" + """"user_agent"":"""" + var_user_agent + """","" + """"password"":"""" + var_enciphered_password + """"}""",,,,2020-01-07 16:25:30,2020-01-07 16:25:30,0.001s,PASSED
+partner_token = partner_token,,,,2020-01-07 16:25:30,2020-01-07 16:25:30,0.001s,PASSED
+out.println(plain),,,,2020-01-07 16:25:30,2020-01-07 16:25:30,0.009s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2020-01-07 16:25:30,2020-01-07 16:25:30,0.031s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2020-01-07 16:25:30,2020-01-07 16:25:30,0.001s,PASSED
+out.println(body),,,,2020-01-07 16:25:30,2020-01-07 16:25:30,0.001s,PASSED
+"request = findTestObject(""Account/obj_loginOrganisation"")",,,,2020-01-07 16:25:30,2020-01-07 16:25:31,0.083s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2020-01-07 16:25:31,2020-01-07 16:25:31,0.025s,PASSED
+response = sendRequest(request),,,,2020-01-07 16:25:31,2020-01-07 16:25:53,21.962s,FAILED

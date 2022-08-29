@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="TS_promoAddSofEdc" time="2" tests="1" failures="0" errors="1">
+    <testsuite name="TS_promoAddSofEdc" tests="1" failures="0" errors="1" time="2" timestamp="2019-12-17 11:27:52" hostname="Silvi - LAPTOP-ALMT97O4" id="Test Suites/E_Wallet/TS_promoAddSofEdc/TS_promoAddSofEdc">
+        <properties>
+            <property name="deviceName" value=""/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_promoAddSofEdc\\TS_promoAddSofEdc\\20191217_112751"/>
+            <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_promoAddSofEdc\\TS_promoAddSofEdc\\20191217_112751\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Silvi - LAPTOP-ALMT97O4"/>
+            <property name="hostAddress" value="172.18.4.57"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.2.2.4"/>
+        </properties>
+        <testcase name="Test Cases/Account/TC_loginCustomer/Login_Customer_Rian" classname="Test Cases/Account/TC_loginCustomer/Login_Customer_Rian" status="PASSED">
+            <system-out>2019-12-17 11:27:52 - [TEST_CASE][PASSED] - Test Cases/Account/TC_loginCustomer/Login_Customer_Rian: Test Cases/Account/TC_loginCustomer/Login_Customer_Rian&#xD;
+&#xD;
+2019-12-17 11:27:53 - [TEST_STEP][PASSED] - var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin): null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + ""," + ""phone_number":"" + var_phone_number + ""," + ""pin":"" + var_enciphered_pin + ""," + ""device_id":"" + var_device_id + ""," + ""fcm_token":"" + var_fcm_token + ""}": null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - body = "{"organisation_id":"1","data":"" + encipheredData + "","lang":"id"}": null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - request = findTestObject("Account/obj_loginCustomer"): null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 11:27:54 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 11:27:55 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_promoAddSofEdc\TS_promoAddSofEdc\20191217_112751\requests\main\0.har&#xD;
+&#xD;
+2019-12-17 11:27:55 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - rcIsTrue = verifyEqual(response_code, rc_ref.getRCName()): Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-17 11:27:55 - [MESSAGE][PASSED] - Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse()): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 11:27:55 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - if (rc_ref == RC00): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - decipheredResponseData = SecureUtils.decryptAesEwallet(data, var_aes_key): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - decipheredRespDataMap = JsonSlurper().parseText(decipheredResponseData): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(decipheredRespDataMap): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - access_token_customer = access_token: null</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc" classname="Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc" status="ERROR">
+            <error type="ERROR" message="Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc FAILED.&#xA;Reason:&#xA;java.lang.NullPointerException: Cannot invoke method setBodyContent() on null object&#xD;&#xA;&#x9;at TC_promoAddSofEdc.run(TC_promoAddSofEdc:50)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;&#xA;&#x9;at TempTestSuite1576556871098.run(TempTestSuite1576556871098.groovy:35)&#xD;&#xA;"/>
+            <system-out>2019-12-17 11:27:55 - [TEST_CASE][ERROR] - Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc: Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc FAILED.
+Reason:
+java.lang.NullPointerException: Cannot invoke method setBodyContent() on null object&#xD;
+	at TC_promoAddSofEdc.run(TC_promoAddSofEdc:50)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1576556871098.run(TempTestSuite1576556871098.groovy:35)&#xD;
+&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + ""," + ""issuer_code":"" + var_issuer_code + ""," + ""account_no_cid":"" + var_account_no_cid + ""," + ""authentication":"" + var_enciphered_pin + ""," + ""customer_email":"" + var_customer_email + ""," + ""wallet_ref1":"" + var_wallet_ref1 + ""," + ""wallet_ref2":"" + var_wallet_ref2 + ""," + ""wallet_ref3":"" + var_wallet_ref3 + ""," + ""first_name":"" + var_first_name + ""," + ""last_name":"" + var_last_name + """ + "}": null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println("var_customer_token" + var_customer_token): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println("var_partner_token" + var_partner_token): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - body = "{"organisation_id":"" + var_organisation_id + "","data":"" + encipheredData + "","lang":"id"}": null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - request = findTestObject("E_wallet/Add_SoF_EDC_URL"): Test object with id 'Object Repository/E_wallet/Add_SoF_EDC_URL' does not exist&#xD;
+&#xD;
+2019-12-17 11:27:55 - [MESSAGE][WARNING] - Test object with id 'Object Repository/E_wallet/Add_SoF_EDC_URL' does not exist&#xD;
+&#xD;
+2019-12-17 11:27:55 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null</system-out>
+            <system-err>2019-12-17 11:27:55 - [TEST_CASE][ERROR] - Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc: Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc FAILED.
+Reason:
+java.lang.NullPointerException: Cannot invoke method setBodyContent() on null object&#xD;
+	at TC_promoAddSofEdc.run(TC_promoAddSofEdc:50)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1576556871098.run(TempTestSuite1576556871098.groovy:35)</system-err>
+        </testcase>
+        <system-out>2019-12-17 11:27:52 - [TEST_SUITE][INCOMPLETE] - TS_promoAddSofEdc: null</system-out>
+        <system-err>2019-12-17 11:27:52 - [TEST_SUITE][INCOMPLETE] - TS_promoAddSofEdc: null</system-err>
+    </testsuite>
+</testsuites>

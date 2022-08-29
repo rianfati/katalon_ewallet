@@ -1,0 +1,202 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_checkURLTokenValidity,,,,2019-12-18 09:37:39,2019-12-18 09:37:44,4.951s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginMerchant/TC_loginMerchantSysAdmin,,,,2019-12-18 09:37:39,2019-12-18 09:37:42,2.993s,PASSED
+"var_enciphered_password = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_password)",,,,2019-12-18 09:37:40,2019-12-18 09:37:41,1.109s,PASSED
+"plain = ""{"" + """"email_address"":"""" + var_email_address + """","" + """"user_agent"":"""" + var_user_agent + """","" + """"password"":"""" + var_enciphered_password + """"}""",,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.001s,PASSED
+out.println(plain),,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.007s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.025s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.001s,PASSED
+out.println(body),,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.000s,PASSED
+"request = findTestObject(""Account/obj_loginMerchant"")",,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.054s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:41,2019-12-18 09:37:41,0.021s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:41,2019-12-18 09:37:42,0.984s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.005s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.001s,PASSED
+out.println(body_content),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.013s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.004s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.013s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.002s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.023s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.006s,PASSED
+if (rc_ref == RC00),,,,2019-12-18 09:37:42,2019-12-18 09:37:42,0.009s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_checkURLTokenValidity/TC_checkURLTokenValidity,,,,2019-12-18 09:37:42,2019-12-18 09:37:43,0.620s,PASSED
+"plain = ""{""""}""",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"body = ""{""data"":"""" + encipheredData + """"}""",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(body),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+println(hostname),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+println(access_token_merchant),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+partner_token = partner_token,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+println(partner_token),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.002s,PASSED
+"request = findTestObject(""Dashboard_App/obj_checkURLTokenValidity"")",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.035s,PASSED
+println(request.getRestUrl()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.002s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"if (var_merchant_token == ""0"")",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+else,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.015s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.283s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+println(body_content),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.002s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.002s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.004s,PASSED
+if (result == false),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+else,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_checkURLTokenValidity/TC_checkURLTokenValidity,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.273s,PASSED
+"plain = ""{""""}""",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"body = ""{""data"":"""" + encipheredData + """"}""",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+out.println(body),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+println(hostname),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+println(access_token_merchant),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+partner_token = partner_token,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+println(partner_token),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_checkURLTokenValidity"")",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.036s,PASSED
+println(request.getRestUrl()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"if (var_merchant_token == ""0"")",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+else,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.006s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.146s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.002s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+println(body_content),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.004s,PASSED
+if (result == false),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+else,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_checkURLTokenValidity/TC_checkURLTokenValidity,,,,2019-12-18 09:37:43,2019-12-18 09:37:44,0.221s,PASSED
+"plain = ""{""""}""",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"body = ""{""data"":"""" + encipheredData + """"}""",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+out.println(body),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+println(hostname),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+println(access_token_merchant),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+partner_token = partner_token,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+println(partner_token),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/obj_checkURLTokenValidity"")",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.040s,PASSED
+println(request.getRestUrl()),,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.001s,PASSED
+"if (var_merchant_token == ""0"")",,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.000s,PASSED
+else,,,,2019-12-18 09:37:43,2019-12-18 09:37:43,0.004s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:43,2019-12-18 09:37:44,0.108s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.003s,PASSED
+if (result == false),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+else,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.005s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_checkURLTokenValidity/TC_checkURLTokenValidity,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.178s,PASSED
+"plain = ""{""""}""",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.002s,PASSED
+"body = ""{""data"":"""" + encipheredData + """"}""",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(body),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+println(hostname),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(access_token_merchant),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+partner_token = partner_token,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+println(partner_token),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_checkURLTokenValidity"")",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.040s,PASSED
+println(request.getRestUrl()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"if (var_merchant_token == ""0"")",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.005s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.070s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+println(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.002s,PASSED
+if (result == false),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+else,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_checkURLTokenValidity/TC_checkURLTokenValidity,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.170s,PASSED
+"plain = ""{""""}""",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"body = ""{""data"":"""" + encipheredData + """"}""",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(body),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(hostname),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(access_token_merchant),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+partner_token = partner_token,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(partner_token),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_checkURLTokenValidity"")",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.039s,PASSED
+println(request.getRestUrl()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"if (var_merchant_token == ""0"")",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.060s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+println(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.002s,PASSED
+if (result == false),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+else,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TC_checkURLTokenValidity/TC_checkURLTokenValidity,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.185s,PASSED
+"plain = ""{""""}""",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"body = ""{""data"":"""" + encipheredData + """"}""",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(body),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+println(hostname),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(access_token_merchant),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+partner_token = partner_token,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+println(partner_token),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/obj_checkURLTokenValidity"")",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.050s,PASSED
+println(request.getRestUrl()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"if (var_merchant_token == ""0"")",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.072s,PASSED
+body_content = responseBodyContent,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+status_code = statusCode,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+println(body_content),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.002s,PASSED
+if (result == false),,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.000s,PASSED
+else,,,,2019-12-18 09:37:44,2019-12-18 09:37:44,0.004s,PASSED

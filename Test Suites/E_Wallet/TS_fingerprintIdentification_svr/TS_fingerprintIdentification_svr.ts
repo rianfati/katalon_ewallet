@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_fingerprintIdentification_svr</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>dac5ca90-a745-4251-9f4f-9b3051ac18f0</testSuiteGuid>
+   <testCaseLink>
+      <guid>ef4a4240-688a-4edb-83fa-4ced4ecdc93b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/E_Wallet/API fingerprint Identification (svc)/API_Fingerprint_Identification</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>4d56cc91-fa12-48a9-aec5-8903af1408b6</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/E_Wallet/DF_fingerprintIdentification/DF_fingerprintIdentification</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>4d56cc91-fa12-48a9-aec5-8903af1408b6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_image</value>
+         <variableId>4851716b-a8f4-4620-a18b-acab78be1dc6</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>4d56cc91-fa12-48a9-aec5-8903af1408b6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_request_id</value>
+         <variableId>dfc232d6-da28-4b09-9165-62b3eb23746a</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>af95b6f2-6540-457e-8de3-2a3e8685f9c0</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>4d56cc91-fa12-48a9-aec5-8903af1408b6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_expected_rc</value>
+         <variableId>c2d74685-432c-451c-b12d-8e12c54e8b8b</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

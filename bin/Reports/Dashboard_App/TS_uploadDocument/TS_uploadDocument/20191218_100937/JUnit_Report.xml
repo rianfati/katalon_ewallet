@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="TS_uploadDocument" time="3" tests="0" failures="0" errors="2">
+    <testsuite name="TS_uploadDocument" tests="0" failures="0" errors="2" time="3" timestamp="2019-12-18 10:09:39" hostname="Silvi - LAPTOP-ALMT97O4" id="Test Suites/Dashboard_App/TS_uploadDocument/TS_uploadDocument">
+        <properties>
+            <property name="deviceName" value=""/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\Dashboard_App\\TS_uploadDocument\\TS_uploadDocument\\20191218_100937"/>
+            <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\Dashboard_App\\TS_uploadDocument\\TS_uploadDocument\\20191218_100937\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Silvi - LAPTOP-ALMT97O4"/>
+            <property name="hostAddress" value="172.18.4.57"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.2.2.4"/>
+        </properties>
+        <testcase name="Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo" classname="Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo" status="ERROR">
+            <error type="ERROR" message="Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo FAILED.&#xA;Reason:&#xA;groovy.lang.MissingPropertyException: No such property: response_code for class: java.lang.Integer&#xD;&#xA;&#x9;at TC_loginMerchantJojo.run(TC_loginMerchantJojo:67)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;&#xA;&#x9;at TempTestSuite1576638577432.run(TempTestSuite1576638577432.groovy:35)&#xD;&#xA;"/>
+            <system-out>2019-12-18 10:09:39 - [TEST_CASE][ERROR] - Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo: Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo FAILED.
+Reason:
+groovy.lang.MissingPropertyException: No such property: response_code for class: java.lang.Integer&#xD;
+	at TC_loginMerchantJojo.run(TC_loginMerchantJojo:67)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1576638577432.run(TempTestSuite1576638577432.groovy:35)&#xD;
+&#xD;
+&#xD;
+2019-12-18 10:09:39 - [TEST_STEP][PASSED] - var_enciphered_password = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_password): null&#xD;
+&#xD;
+2019-12-18 10:09:40 - [TEST_STEP][PASSED] - plain = "{" + ""email_address":"" + var_email_address + ""," + ""user_agent":"" + var_user_agent + ""," + ""password":"" + var_enciphered_password + ""}": null&#xD;
+&#xD;
+2019-12-18 10:09:40 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-18 10:09:40 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-18 10:09:40 - [TEST_STEP][PASSED] - body = "{"organisation_id":"" + var_organisation_id + ""," + ""data":"" + encipheredData + ""," + ""lang":"" + var_lang + ""}": null&#xD;
+&#xD;
+2019-12-18 10:09:40 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-18 10:09:40 - [TEST_STEP][PASSED] - request = findTestObject("Account/obj_loginMerchant"): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-18 10:09:41 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\Dashboard_App\TS_uploadDocument\TS_uploadDocument\20191218_100937\requests\main\0.har&#xD;
+&#xD;
+2019-12-18 10:09:41 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - out.println(body_content): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-12-18 10:09:41 - [TEST_STEP][PASSED] - rcIsTrue = verifyEqual(response_code, rc_ref.getRCName()): null</system-out>
+            <system-err>2019-12-18 10:09:39 - [TEST_CASE][ERROR] - Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo: Test Cases/Account/TC_loginMerchant/TC_loginMerchantJojo FAILED.
+Reason:
+groovy.lang.MissingPropertyException: No such property: response_code for class: java.lang.Integer&#xD;
+	at TC_loginMerchantJojo.run(TC_loginMerchantJojo:67)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1576638577432.run(TempTestSuite1576638577432.groovy:35)</system-err>
+        </testcase>
+        <testcase name="Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument" classname="Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument" status="ERROR">
+            <error type="ERROR" message="Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument FAILED.&#xA;Reason:&#xA;groovy.lang.MissingPropertyException: No such property: response_code for class: java.lang.Integer&#xD;&#xA;&#x9;at TC_uploadDocument.run(TC_uploadDocument:79)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;&#xA;&#x9;at TempTestSuite1576638577432.run(TempTestSuite1576638577432.groovy:35)&#xD;&#xA;"/>
+            <system-out>2019-12-18 10:09:41 - [TEST_CASE][ERROR] - Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument: Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument FAILED.
+Reason:
+groovy.lang.MissingPropertyException: No such property: response_code for class: java.lang.Integer&#xD;
+	at TC_uploadDocument.run(TC_uploadDocument:79)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1576638577432.run(TempTestSuite1576638577432.groovy:35)&#xD;
+&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - file = new java.io.File(((./resources/rakhmat/ + var_file) + )): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - println(file): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - fis = new java.io.FileInputStream(file): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - imgBytes = []: null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - fis.read(imgBytes): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - basse64 = getEncoder().encodeToString(imgBytes): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - println(basse64): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + "","upload_type":"" + var_upload_type + "","enrolment_id":"" + var_enrolment_id + "","r_outlet_id":"" + var_r_outlet_id + "","file_name":"" + var_file_name + "","file":"" + basse64 + "","document_type":"" + var_document_type + ""}": null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - body = "{"organisation_id":"" + var_organisation_id + ""," + ""data":"" + encipheredData + ""," + ""lang":"" + var_lang + ""}": null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - defaultHeaders = Arrays.asList(header1, header2): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - request = findTestObject("Dashboard_App/obj_uploadDocument"): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - request.setHttpHeaderProperties(defaultHeaders): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-18 10:09:42 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\Dashboard_App\TS_uploadDocument\TS_uploadDocument\20191218_100937\requests\main\1.har&#xD;
+&#xD;
+2019-12-18 10:09:42 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - println(body_content): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-12-18 10:09:42 - [TEST_STEP][PASSED] - result = verifyEqual(response_code, rc_ref.getRCName()): null</system-out>
+            <system-err>2019-12-18 10:09:41 - [TEST_CASE][ERROR] - Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument: Test Cases/Dashboard_App/TC_uploadDocument/TC_uploadDocument FAILED.
+Reason:
+groovy.lang.MissingPropertyException: No such property: response_code for class: java.lang.Integer&#xD;
+	at TC_uploadDocument.run(TC_uploadDocument:79)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1576638577432.run(TempTestSuite1576638577432.groovy:35)</system-err>
+        </testcase>
+        <system-out>2019-12-18 10:09:39 - [TEST_SUITE][INCOMPLETE] - TS_uploadDocument: null</system-out>
+        <system-err>2019-12-18 10:09:39 - [TEST_SUITE][INCOMPLETE] - TS_uploadDocument: null</system-err>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,36 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_promoAddSofEdc,,,,2019-12-17 11:27:52,2019-12-17 11:27:55,2.861s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/Login_Customer_Rian,,,,2019-12-17 11:27:52,2019-12-17 11:27:55,2.421s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 11:27:53,2019-12-17 11:27:54,0.960s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"pin"":"""" + var_enciphered_pin + """","" + """"device_id"":"""" + var_device_id + """","" + """"fcm_token"":"""" + var_fcm_token + """"}""",,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.001s,PASSED
+out.println(plain),,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.007s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.020s,PASSED
+"body = ""{""organisation_id"":""1"",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.000s,PASSED
+out.println(body),,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.000s,PASSED
+"request = findTestObject(""Account/obj_loginCustomer"")",,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.039s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 11:27:54,2019-12-17 11:27:54,0.008s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:27:54,2019-12-17 11:27:55,0.761s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.007s,PASSED
+status_code = statusCode,,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.014s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.003s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.013s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.002s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.018s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.004s,PASSED
+if (rc_ref == RC00),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.007s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_promoAddSofEdc/TC_promoAddSofEdc,,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.246s,ERROR
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.002s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"issuer_code"":"""" + var_issuer_code + """","" + """"account_no_cid"":"""" + var_account_no_cid + """","" + """"authentication"":"""" + var_enciphered_pin + """","" + """"customer_email"":"""" + var_customer_email + """","" + """"wallet_ref1"":"""" + var_wallet_ref1 + """","" + """"wallet_ref2"":"""" + var_wallet_ref2 + """","" + """"wallet_ref3"":"""" + var_wallet_ref3 + """","" + """"first_name"":"""" + var_first_name + """","" + """"last_name"":"""" + var_last_name + """""" + ""}""",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.002s,PASSED
+out.println(plain),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.001s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.003s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.001s,PASSED
+out.println(body),,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.001s,PASSED
+"request = findTestObject(""E_wallet/Add_SoF_EDC_URL"")",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.002s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 11:27:55,2019-12-17 11:27:55,0.004s,PASSED

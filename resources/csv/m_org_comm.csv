@@ -1,0 +1,5 @@
+"id","created_at","updated_at","deleted_at","organisation_id","drc_ip_address","prod_ip_address","communication_method","source_method","cryptographic_type","secret_key","public_key","ssl_certificate","default_flag","partner_token"
+1,2018-10-21 11:31:00,2018-10-21 11:31:00,,1,"1.1.1.1","1.1.1.1",api,fadfafadsfad,aes,this_key_have_to_equal_32_bytes!,fdafdafdsafa,fadfdfadsfa,,ABCDEF0123456789
+2,2018-10-12 11:19:26,2018-10-12 11:19:26,,2,"","",api,"",aes,this_key_have_to_equal_32_bytes!,"","",,"1234567890ABCDEF"
+3,2018-10-12 11:19:26,2018-10-12 11:19:26,,3, , ,api, ,aes,this_key_have_to_equal_32_bytes!, , ,,
+10,2018-10-12 11:19:26,2018-10-12 11:19:26,,10,"1.1.1.1","1.1.1.1",api,fadfafadsfad,aes,this_key_have_to_equal_32_bytes!,fadfafadsfad,fadfafadsfad,,

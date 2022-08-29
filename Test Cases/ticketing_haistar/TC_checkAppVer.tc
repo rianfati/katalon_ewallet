@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_checkAppVer</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>39d0f0a0-3e87-4312-8201-e3a52b01f5bf</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d607ce00-f95e-4e2a-a605-c5c0b8953e90</id>
+      <masked>false</masked>
+      <name>lang</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4ae714cd-9195-4673-a708-0dd156d69432</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>3ec0f91b-ae89-46c6-ac49-65a7c4fc2dc2</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

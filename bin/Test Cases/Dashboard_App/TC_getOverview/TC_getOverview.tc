@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_getOverview</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>64cbd6fe-c851-4b39-ac77-f9dda3dd9308</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fac7676f-ca3f-4070-bf06-eb14abccdbd8</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b3efbe7e-2023-4318-a49a-9560ae264995</id>
+      <masked>false</masked>
+      <name>var_merchant_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.partner_token_texo</defaultValue>
+      <description></description>
+      <id>4e9a2547-ca78-42cb-b2ae-d58e0d724a31</id>
+      <masked>false</masked>
+      <name>var_partner_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.access_token_merchant</defaultValue>
+      <description></description>
+      <id>fc7d5c66-9a85-4f01-afab-a725e108232b</id>
+      <masked>false</masked>
+      <name>access_token_merchant</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>d75c2568-4423-48e7-ba6a-964cf5bd35e9</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

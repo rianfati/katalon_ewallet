@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_inquiryVAMandiri</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>db52169b-76f0-48d9-9a44-77b105a07db9</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.trace_number</defaultValue>
+      <description></description>
+      <id>29666a26-3f0a-40f3-8ab5-87229c0c6d11</id>
+      <masked>false</masked>
+      <name>var_trace_number</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>16ecf20b-3fff-4941-b0af-3a35034c0e10</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>8ba493dd-3a5b-4394-bbd2-fe0568e7655f</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

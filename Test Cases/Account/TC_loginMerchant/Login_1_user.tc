@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login_1_user</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7508ed07-04b7-4b0f-93d8-4647913606fc</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Account/Login_Merchant').getValue('user_password', 2)</defaultValue>
+      <description></description>
+      <id>5f9a3fe1-21bb-4e0b-acdb-0450db3aa7d1</id>
+      <masked>false</masked>
+      <name>var_user_password</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Account/Login_Merchant').getValue('email_address', 2)</defaultValue>
+      <description></description>
+      <id>df318374-44c8-48f7-b1ca-f513c932df23</id>
+      <masked>false</masked>
+      <name>var_email_address</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Account/Login_Merchant').getValue('user_agent', 2)</defaultValue>
+      <description></description>
+      <id>8010b120-e00a-4b44-95f6-9ee6a49bb50c</id>
+      <masked>false</masked>
+      <name>var_user_agent</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Account/Login_Merchant').getValue('organisation_id', 2)</defaultValue>
+      <description></description>
+      <id>91504f08-f67a-440d-bfe6-d9f9189cfe3e</id>
+      <masked>false</masked>
+      <name>var_organisation_id</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Account/Login_Merchant').getValue('lang', 2)</defaultValue>
+      <description></description>
+      <id>9f3e6e13-06df-4afb-b49e-058206d965bd</id>
+      <masked>false</masked>
+      <name>var_lang</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Account/Login_Merchant').getValue('expected_rc', 2)</defaultValue>
+      <description></description>
+      <id>5a89daa3-9a9b-4122-a10f-77bc886b30cd</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.access_token_merchant</defaultValue>
+      <description></description>
+      <id>62330906-04d1-46cf-9418-0f74352155ea</id>
+      <masked>false</masked>
+      <name>access_token_merchant</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>66c06380-b190-43cd-95b5-e8406506524e</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

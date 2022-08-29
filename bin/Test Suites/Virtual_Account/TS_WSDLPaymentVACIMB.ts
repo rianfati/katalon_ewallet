@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_WSDLPaymentVACIMB</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>f565ca70-6a38-4d8e-b50c-54f9e4d37b6a</testSuiteGuid>
+   <testCaseLink>
+      <guid>7af07066-afc4-4a41-bf13-29e1b0c6c215</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Virtual_Account/TC_WSDLPaymentVACIMB</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>ecf56904-1ee3-48a3-986c-53356dfcf0e6</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Virtual_Account/DTF_WSDLPaymentVACIMB</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>ecf56904-1ee3-48a3-986c-53356dfcf0e6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>CustomerKey1</value>
+         <variableId>6cb23ed2-e270-4d1b-bf99-e43f30fff5e0</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>ecf56904-1ee3-48a3-986c-53356dfcf0e6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Amount</value>
+         <variableId>02c6bfdb-c0c1-492b-8de7-86c27b9ed48e</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>ecf56904-1ee3-48a3-986c-53356dfcf0e6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>sc</value>
+         <variableId>fa5c7167-37f3-49cf-be36-34536c37246f</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

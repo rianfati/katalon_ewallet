@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_inquiryEwallet1</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ea2e9cf7-e619-44ab-9822-db37b516c6c3</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>67af9c07-1675-4014-bd9b-344ab3927dc1</id>
+      <masked>false</masked>
+      <name>var_user_agent</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>13faa506-96c0-4d4c-93fb-6ff2de9de5e0</id>
+      <masked>false</masked>
+      <name>var_issuer_code</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>afa3f845-03ec-4906-9b81-513ca953c199</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>1fa3bbc7-6437-4612-bff3-e035054c2298</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ec0283d9-fb23-40f2-9688-540833773799</id>
+      <masked>false</masked>
+      <name>var_account_no_cid</name>
+   </variable>
+</TestCaseEntity>

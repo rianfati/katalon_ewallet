@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_accountInquiry</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>287bc0ad-ba09-4711-8f5a-cde96021b9be</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f0494aea-e74c-45d6-9be4-ed5258e34017</id>
+      <masked>false</masked>
+      <name>var_user_agent</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1d29b49e-9578-49e9-b235-2ba19a150de6</id>
+      <masked>false</masked>
+      <name>var_phone_number</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c6509325-158d-43e3-9f5b-272039ee1a5c</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>55ed7c4e-a60b-4863-b924-1f3c15c5391c</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

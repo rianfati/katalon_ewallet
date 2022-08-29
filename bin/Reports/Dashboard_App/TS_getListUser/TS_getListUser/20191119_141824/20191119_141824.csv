@@ -1,0 +1,1081 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_getListUser,,,,2019-11-19 14:18:27,2019-11-19 14:18:52,25.190s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/Login_Merchant/Login_SysAdmin,,,,2019-11-19 14:18:27,2019-11-19 14:18:34,7.645s,PASSED
+"var_enciphered_password = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_password)",,,,2019-11-19 14:18:28,2019-11-19 14:18:29,0.911s,PASSED
+"plain = ""{"" + """"email_address"":"""" + var_email_address + """","" + """"user_agent"":"""" + var_user_agent + """","" + """"password"":"""" + var_enciphered_password + """"}""",,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.017s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.035s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.001s,PASSED
+"request = findTestObject(""Account/Login_Merchant_URL"")",,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.098s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:29,2019-11-19 14:18:29,0.016s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:29,2019-11-19 14:18:34,4.655s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.010s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.001s,PASSED
+out.println(body_content),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.026s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.003s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.020s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.003s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.002s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.027s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.004s,PASSED
+if (rc_ref == RC00),,,,2019-11-19 14:18:34,2019-11-19 14:18:34,0.138s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:34,2019-11-19 14:18:35,0.557s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+out.println(body),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.074s,PASSED
+println(hostname),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.003s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+else,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.009s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.166s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.003s,PASSED
+if (result == false),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+else,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.011s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.318s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.093s,PASSED
+println(hostname),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+else,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.005s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.118s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.003s,PASSED
+if (result == false),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+else,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.009s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:35,2019-11-19 14:18:36,0.533s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.083s,PASSED
+println(hostname),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.002s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.001s,PASSED
+else,,,,2019-11-19 14:18:35,2019-11-19 14:18:35,0.003s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:35,2019-11-19 14:18:36,0.361s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+else,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.187s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.060s,PASSED
+println(hostname),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+else,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.073s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+else,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.252s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.102s,PASSED
+println(hostname),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+else,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.087s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.004s,PASSED
+if (result == false),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+else,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.006s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:36,2019-11-19 14:18:37,0.884s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.003s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.095s,PASSED
+println(hostname),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.001s,PASSED
+else,,,,2019-11-19 14:18:36,2019-11-19 14:18:36,0.003s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:36,2019-11-19 14:18:37,0.699s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.003s,PASSED
+if (result == false),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+else,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.255s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.063s,PASSED
+println(hostname),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+else,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.115s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+else,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.006s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:37,2019-11-19 14:18:38,0.195s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:37,2019-11-19 14:18:37,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:37,2019-11-19 14:18:38,0.067s,PASSED
+println(hostname),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.066s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.487s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.060s,PASSED
+println(hostname),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.372s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.166s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.060s,PASSED
+println(hostname),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.059s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:38,2019-11-19 14:18:39,0.245s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.095s,PASSED
+println(hostname),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+else,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.081s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.001s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:38,2019-11-19 14:18:38,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:38,2019-11-19 14:18:39,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+else,,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:39,2019-11-19 14:18:40,1.083s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.082s,PASSED
+println(hostname),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.000s,PASSED
+else,,,,2019-11-19 14:18:39,2019-11-19 14:18:39,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:39,2019-11-19 14:18:40,0.938s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+else,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.204s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.070s,PASSED
+println(hostname),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+else,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.082s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+else,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.195s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.050s,PASSED
+println(hostname),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+else,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.092s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+else,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:40,2019-11-19 14:18:41,0.504s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.049s,PASSED
+println(hostname),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+else,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.409s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:40,2019-11-19 14:18:40,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:40,2019-11-19 14:18:41,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.216s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.067s,PASSED
+println(hostname),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.003s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.094s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.215s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.076s,PASSED
+println(hostname),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.081s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.003s,PASSED
+if (result == false),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.438s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.073s,PASSED
+println(hostname),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.316s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:41,2019-11-19 14:18:42,0.181s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.065s,PASSED
+println(hostname),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.000s,PASSED
+else,,,,2019-11-19 14:18:41,2019-11-19 14:18:41,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:41,2019-11-19 14:18:42,0.073s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+else,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.185s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.002s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.067s,PASSED
+println(hostname),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+else,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.068s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+else,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:42,2019-11-19 14:18:43,0.873s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.069s,PASSED
+println(hostname),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.001s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.000s,PASSED
+else,,,,2019-11-19 14:18:42,2019-11-19 14:18:42,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:42,2019-11-19 14:18:43,0.765s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+else,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.162s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.053s,PASSED
+println(hostname),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+else,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.071s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+else,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.235s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+out.println(plain),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.060s,PASSED
+println(hostname),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+else,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.122s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+else,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.004s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:43,2019-11-19 14:18:45,2.021s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.046s,PASSED
+println(hostname),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.001s,PASSED
+else,,,,2019-11-19 14:18:43,2019-11-19 14:18:43,0.000s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:43,2019-11-19 14:18:45,1.929s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+else,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.190s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.045s,PASSED
+println(hostname),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+else,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.110s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+else,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.225s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.047s,PASSED
+println(hostname),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+else,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.134s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.000s,PASSED
+else,,,,2019-11-19 14:18:45,2019-11-19 14:18:45,0.003s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:45,2019-11-19 14:18:47,1.883s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.064s,PASSED
+println(hostname),,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.001s,PASSED
+else,,,,2019-11-19 14:18:46,2019-11-19 14:18:46,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:46,2019-11-19 14:18:47,1.757s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.005s,PASSED
+if (result == false),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+else,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.006s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:47,2019-11-19 14:18:48,0.213s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.048s,PASSED
+println(hostname),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.000s,PASSED
+else,,,,2019-11-19 14:18:47,2019-11-19 14:18:47,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:47,2019-11-19 14:18:48,0.114s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+else,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.239s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.052s,PASSED
+println(hostname),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+else,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.002s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.130s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+else,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.005s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:48,2019-11-19 14:18:50,1.988s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.059s,PASSED
+println(hostname),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.001s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.000s,PASSED
+else,,,,2019-11-19 14:18:48,2019-11-19 14:18:48,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:48,2019-11-19 14:18:50,1.870s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.004s,PASSED
+if (result == false),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+else,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.011s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.197s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+out.println(body),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.054s,PASSED
+println(hostname),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+else,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.099s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+if (result == false),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+else,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.182s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.045s,PASSED
+println(hostname),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+else,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.104s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(body_content),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.002s,PASSED
+if (result == false),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+else,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.002s,PASSED
+,,,,,,,
+Test Cases/Dashboard_App/TSC_getListUser/TSC_getListUser,,,,2019-11-19 14:18:50,2019-11-19 14:18:52,1.485s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """",""data_rules"":{""filter"": {""username"": """" + var_username + """",""role_id"": """" + var_role_id + """",""status"": """" + var_status + """"},""search"": {""name"": """" + var_name + """"},""sort"": [""created_date""]}}""",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+page_number = var_page_number,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+page_size = var_page_size,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+partner_token = partner_token,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(plain),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"out.println(""var_merchant_token"" + var_merchant_token)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+out.println(body),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+"request = findTestObject(""Dashboard_App/OR_getListUser"")",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.044s,PASSED
+println(hostname),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(access_token_merchant),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+println(request.getRestUrl()),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+if (var_merchant_token == 0),,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.000s,PASSED
+else,,,,2019-11-19 14:18:50,2019-11-19 14:18:50,0.001s,PASSED
+response = sendRequest(request),,,,2019-11-19 14:18:50,2019-11-19 14:18:52,1.391s,PASSED
+body_content = responseBodyContent,,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+status_code = statusCode,,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.000s,PASSED
+out.println(respDataMap),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+println(body_content),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.004s,PASSED
+if (result == false),,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.000s,PASSED
+else,,,,2019-11-19 14:18:52,2019-11-19 14:18:52,0.006s,PASSED

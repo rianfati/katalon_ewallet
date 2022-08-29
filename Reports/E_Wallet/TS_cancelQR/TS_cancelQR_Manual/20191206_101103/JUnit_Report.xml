@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="TS_cancelQR_Manual" time="2" tests="0" failures="0" errors="1">
+    <testsuite name="TS_cancelQR_Manual" tests="0" failures="0" errors="1" time="2" timestamp="2019-12-06 10:11:05" hostname="Silvi - LAPTOP-ALMT97O4" id="Test Suites/E_Wallet/TS_cancelQR/TS_cancelQR_Manual">
+        <properties>
+            <property name="deviceName" value=""/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_cancelQR\\TS_cancelQR_Manual\\20191206_101103"/>
+            <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_cancelQR\\TS_cancelQR_Manual\\20191206_101103\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Silvi - LAPTOP-ALMT97O4"/>
+            <property name="hostAddress" value="172.18.4.57"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.2.2.4"/>
+        </properties>
+        <testcase name="Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR" classname="Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR" status="ERROR">
+            <error type="ERROR" message="Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR FAILED.&#xA;Reason:&#xA;java.lang.NullPointerException: Cannot invoke method decodeBase64() on null object&#xD;&#xA;&#x9;at id.texo.ewallet.secure.SecureUtils.decryptAesEwallet(EwalletSecure.groovy:174)&#xD;&#xA;&#x9;at id.texo.ewallet.secure.SecureUtils$decryptAesEwallet$0.call(Unknown Source)&#xD;&#xA;&#x9;at TC_cancelQR.run(TC_cancelQR:85)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;&#xA;&#x9;at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;&#xA;&#x9;at TempTestSuite1575601863198.run(TempTestSuite1575601863198.groovy:35)&#xD;&#xA;"/>
+            <system-out>2019-12-06 10:11:05 - [TEST_CASE][ERROR] - Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR: Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR FAILED.
+Reason:
+java.lang.NullPointerException: Cannot invoke method decodeBase64() on null object&#xD;
+	at id.texo.ewallet.secure.SecureUtils.decryptAesEwallet(EwalletSecure.groovy:174)&#xD;
+	at id.texo.ewallet.secure.SecureUtils$decryptAesEwallet$0.call(Unknown Source)&#xD;
+	at TC_cancelQR.run(TC_cancelQR:85)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1575601863198.run(TempTestSuite1575601863198.groovy:35)&#xD;
+&#xD;
+&#xD;
+2019-12-06 10:11:05 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + ""," + ""unique_code":"" + var_unique_code + ""}": null&#xD;
+&#xD;
+2019-12-06 10:11:05 - [TEST_STEP][PASSED] - partner_token = partner_token: null&#xD;
+&#xD;
+2019-12-06 10:11:05 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-06 10:11:05 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - body = "{"organisation_id":"" + var_organisation_id + ""," + ""data":"" + encipheredData + ""," + ""lang":"" + var_lang + ""}": null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_cancelQR"): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - if (var_customer_token == 0): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - else: null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - out.println("using access_token = " + access_token_customer): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - listQuery = new java.util.ArrayList(): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - listQuery.add(new com.kms.katalon.core.testobject.TestObjectProperty(token, com.kms.katalon.core.testobject.ConditionType.EQUALS, internal.GlobalVariable.access_token_customer)): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - request.setRestParameters(listQuery): null&#xD;
+&#xD;
+2019-12-06 10:11:06 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-06 10:11:07 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_cancelQR\TS_cancelQR_Manual\20191206_101103\requests\main\0.har&#xD;
+&#xD;
+2019-12-06 10:11:08 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - println(request.getRestUrl()): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - println(body_content): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - result = verifyEqual(response_code, rc_ref.getRCName()): Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-06 10:11:08 - [MESSAGE][PASSED] - Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - if (result == false): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - else: null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - verifyEqual(statusCode, rc_ref.getHttpResponse()): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-06 10:11:08 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - if (rc_ref == RC00): null&#xD;
+&#xD;
+2019-12-06 10:11:08 - [TEST_STEP][PASSED] - decipheredResponseData = SecureUtils.decryptAesEwallet(data, var_aes_key): null</system-out>
+            <system-err>2019-12-06 10:11:05 - [TEST_CASE][ERROR] - Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR: Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR FAILED.
+Reason:
+java.lang.NullPointerException: Cannot invoke method decodeBase64() on null object&#xD;
+	at id.texo.ewallet.secure.SecureUtils.decryptAesEwallet(EwalletSecure.groovy:174)&#xD;
+	at id.texo.ewallet.secure.SecureUtils$decryptAesEwallet$0.call(Unknown Source)&#xD;
+	at TC_cancelQR.run(TC_cancelQR:85)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xD;
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)&#xD;
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:133)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:116)&#xD;
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:83)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)&#xD;
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)&#xD;
+	at TempTestSuite1575601863198.run(TempTestSuite1575601863198.groovy:35)</system-err>
+        </testcase>
+        <system-out>2019-12-06 10:11:05 - [TEST_SUITE][INCOMPLETE] - TS_cancelQR_Manual: null</system-out>
+        <system-err>2019-12-06 10:11:05 - [TEST_SUITE][INCOMPLETE] - TS_cancelQR_Manual: null</system-err>
+    </testsuite>
+</testsuites>

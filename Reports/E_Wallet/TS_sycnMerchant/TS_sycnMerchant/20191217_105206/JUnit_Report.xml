@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="TS_sycnMerchant" time="4" tests="13" failures="0" errors="0">
+    <testsuite name="TS_sycnMerchant" tests="13" failures="0" errors="0" time="4" timestamp="2019-12-17 10:52:08" hostname="Silvi - LAPTOP-ALMT97O4" id="Test Suites/E_Wallet/TS_sycnMerchant/TS_sycnMerchant">
+        <properties>
+            <property name="deviceName" value=""/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_sycnMerchant\\TS_sycnMerchant\\20191217_105206"/>
+            <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_sycnMerchant\\TS_sycnMerchant\\20191217_105206\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Silvi - LAPTOP-ALMT97O4"/>
+            <property name="hostAddress" value="172.18.4.57"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.2.2.4"/>
+        </properties>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:08 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:09 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:09 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:09 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:09 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:09 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:10 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\0.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:11 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\1.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '400' and expected object '400' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '400' and expected object '400' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:11 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\2.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '400' and expected object '400' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '400' and expected object '400' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:11 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\3.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:11 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\4.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:11 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\5.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '400' and expected object '400' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '400' and expected object '400' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:11 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\6.har&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:11 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '400' and expected object '400' are equal&#xD;
+&#xD;
+2019-12-17 10:52:11 - [MESSAGE][PASSED] - Actual object '400' and expected object '400' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:12 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\7.har&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:12 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\8.har&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:12 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\9.har&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:12 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\10.har&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:12 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\11.har&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" classname="Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant" status="PASSED">
+            <system-out>2019-12-17 10:52:12 - [TEST_CASE][PASSED] - Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant: Test Cases/E_Wallet/TC_Sync Merchant/TC_Sync Merchant&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body = "{"page":" + var_page + ","page_size":" + var_page_size + ","datetime":"" + var_date + ""}": null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request = findTestObject("E_Wallet/obj_sync Merchant"): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_sycnMerchant\TS_sycnMerchant\20191217_105206\requests\main\12.har&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-17 10:52:12 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, var_expected_rc): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-17 10:52:12 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal</system-out>
+            <system-err></system-err>
+        </testcase>
+        <system-out>2019-12-17 10:52:08 - [TEST_SUITE][INCOMPLETE] - TS_sycnMerchant: null</system-out>
+        <system-err>2019-12-17 10:52:08 - [TEST_SUITE][INCOMPLETE] - TS_sycnMerchant: null</system-err>
+    </testsuite>
+</testsuites>

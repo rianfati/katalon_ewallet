@@ -1,0 +1,92 @@
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import javax.crypto.Cipher as Cipher
+import javax.crypto.spec.IvParameterSpec as IvParameterSpec
+import javax.crypto.spec.SecretKeySpec as SecretKeySpec
+
+import com.google.zxing.EncodeHintType
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
+import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.RequestObject as RequestObject
+import com.kms.katalon.core.testobject.TestObjectProperty
+import com.kms.katalon.core.testobject.impl.HttpTextBodyContent as HttpTextBodyContent
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+
+import groovy.json.JsonSlurper as JsonSlurper
+import id.texo.ewallet.ReturnCodeWrapper
+import id.texo.ewallet.ReturnCodes
+import id.texo.ewallet.TexoUtils as TexoUtils
+import id.texo.ewallet.secure.SecureUtils as SecureUtils
+import internal.GlobalVariable as GlobalVariable
+
+
+String plain =
+'{'+
+'"user_agent":"' + var_user_agent + '",' +
+'"unique_code":"' + var_unique_code +
+'"}'
+
+GlobalVariable.partner_token = partner_token
+
+System.out.println(plain)
+
+encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)
+
+String body = ('{"organisation_id":"'+ var_organisation_id +'",'+
+				'"data":"' + encipheredData +'",'+
+				'"lang":"'+ var_lang +'"}')
+
+System.out.println(body)
+
+def request = (RequestObject) findTestObject('E_Wallet/obj_cancelQR')
+request.setBodyContent(new HttpTextBodyContent(body, "UTF-8", "application/json"))
+
+if (var_customer_token == 0){
+	System.out.println("using partner-token")
+	request.setHttpHeaderProperties("partner-token",var_partner_token) 
+  } else {
+	System.out.println("using access_token = " + GlobalVariable.access_token_customer)
+	ArrayList listQuery = new ArrayList()
+  
+	listQuery.add(new TestObjectProperty("token", ConditionType.EQUALS, GlobalVariable.access_token_customer))
+	request.setRestParameters(listQuery)
+  }
+
+def response = WS.sendRequest(request)
+println(request.getRestUrl())
+//get response
+def body_content = response.responseBodyContent
+def status_code = response.statusCode
+
+def respDataMap = new JsonSlurper().parseText(body_content)
+
+System.out.println(respDataMap)
+println (body_content)
+
+//get the response as enum
+rc_ref = new ReturnCodeWrapper(var_expected_rc).getEnumRC()
+
+System.out.println(var_expected_rc)
+System.out.println(rc_ref.getRCName())
+System.out.println(rc_ref.getHttpResponse())
+
+//compare the result
+result = WS.verifyEqual(respDataMap.response_code, rc_ref.getRCName())
+
+if (result == false) {
+	System.out.println(rc_ref.getRCMessage())
+	System.out.println(rc_ref.getRCDescription())
+} else {
+
+	WS.verifyEqual(response.statusCode, rc_ref.getHttpResponse())
+
+	//deciphered the result if exist/success
+	if (rc_ref == ReturnCodes.RC00) {
+		decipheredResponseData = SecureUtils.decryptAesEwallet(respDataMap.data, var_aes_key)
+		def decipheredRespDataMap = new JsonSlurper().parseText(decipheredResponseData)
+
+		System.out.println(decipheredRespDataMap)
+		String dechiperedResponse = new String (decipheredResponseData)
+		println (dechiperedResponse)
+	}
+}

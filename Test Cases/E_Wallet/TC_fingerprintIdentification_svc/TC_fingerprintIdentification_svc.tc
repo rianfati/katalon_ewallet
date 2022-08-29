@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_fingerprintIdentification_svc</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fe298f74-c326-4e41-afba-947e9df5ce7e</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4851716b-a8f4-4620-a18b-acab78be1dc6</id>
+      <masked>false</masked>
+      <name>var_image</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>dfc232d6-da28-4b09-9165-62b3eb23746a</id>
+      <masked>false</masked>
+      <name>var_request_id</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>af95b6f2-6540-457e-8de3-2a3e8685f9c0</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c2d74685-432c-451c-b12d-8e12c54e8b8b</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,736 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 82837504 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2749), pid=2805, tid=0x00007fa970afa700
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_201-b09) (build 1.8.0_201-b09)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.201-b09 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fa980081800):  VMThread [stack: 0x00007fa9709fb000,0x00007fa970afb000] [id=2819]
+
+Stack: [0x00007fa9709fb000,0x00007fa970afb000],  sp=0x00007fa970af93f0,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xad3525]  VMError::report_and_die()+0x2e5
+V  [libjvm.so+0x4e0457]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x67
+V  [libjvm.so+0x9102f0]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0x100
+V  [libjvm.so+0x90791f]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x1f
+V  [libjvm.so+0x98c806]  PSVirtualSpace::expand_by(unsigned long)+0x56
+V  [libjvm.so+0x98da98]  PSYoungGen::resize(unsigned long, unsigned long)+0xd8
+V  [libjvm.so+0x98a236]  PSScavenge::invoke_no_policy()+0x1376
+V  [libjvm.so+0x98a5cc]  PSScavenge::invoke()+0x4c
+V  [libjvm.so+0x93a318]  ParallelScavengeHeap::failed_mem_allocate(unsigned long)+0x68
+V  [libjvm.so+0xad5073]  VM_ParallelGCFailedAllocation::doit()+0x93
+V  [libjvm.so+0xada296]  VM_Operation::evaluate()+0x46
+V  [libjvm.so+0xad85cd]  VMThread::evaluate_operation(VM_Operation*) [clone .constprop.44]+0xcd
+V  [libjvm.so+0xad8bb3]  VMThread::loop()+0x3a3
+V  [libjvm.so+0xad8f88]  VMThread::run()+0x78
+V  [libjvm.so+0x90d922]  java_start(Thread*)+0x102
+
+VM_Operation (0x00007fa9897608d0): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007fa980013800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fa9800dd000 JavaThread "Service Thread" daemon [_thread_blocked, id=2826, stack(0x00007fa970014000,0x00007fa970115000)]
+  0x00007fa9800c8000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=2825, stack(0x00007fa970116000,0x00007fa970216000)]
+  0x00007fa9800c6000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2824, stack(0x00007fa970217000,0x00007fa970317000)]
+  0x00007fa9800c3000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2823, stack(0x00007fa970318000,0x00007fa970418000)]
+  0x00007fa9800c1800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2822, stack(0x00007fa970418000,0x00007fa970519000)]
+  0x00007fa98008e000 JavaThread "Finalizer" daemon [_thread_blocked, id=2821, stack(0x00007fa9707f8000,0x00007fa9708f9000)]
+  0x00007fa98008b800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2820, stack(0x00007fa9708f9000,0x00007fa9709fa000)]
+  0x00007fa980013800 JavaThread "main" [_thread_blocked, id=2811, stack(0x00007fa989666000,0x00007fa989766000)]
+
+Other Threads:
+=>0x00007fa980081800 VMThread [stack: 0x00007fa9709fb000,0x00007fa970afb000] [id=2819]
+  0x00007fa9800e0000 WatcherThread [stack: 0x00007fa968620000,0x00007fa968720000] [id=2827]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fa98000ff50] Threads_lock - owner thread: 0x00007fa980081800
+[0x00007fa980010450] Heap_lock - owner thread: 0x00007fa980013800
+
+heap address: 0x000000008e400000, size: 1820 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 68608K, used 5119K [0x00000000da180000, 0x00000000de980000, 0x0000000100000000)
+  eden space 63488K, 0% used [0x00000000da180000,0x00000000da180000,0x00000000ddf80000)
+  from space 5120K, 99% used [0x00000000ddf80000,0x00000000de47fc50,0x00000000de480000)
+  to   space 5120K, 0% used [0x00000000de480000,0x00000000de480000,0x00000000de980000)
+ ParOldGen       total 84992K, used 12867K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 15% used [0x000000008e400000,0x000000008f090f30,0x0000000093700000)
+ Metaspace       used 20340K, capacity 20564K, committed 20864K, reserved 1067008K
+  class space    used 2297K, capacity 2396K, committed 2432K, reserved 1048576K
+
+Card table byte_map: [0x00007fa985fbb000,0x00007fa98634a000] byte_map_base: 0x00007fa985b49000
+
+Marking Bits: (ParMarkBitMap*) 0x00007fa988b17d80
+ Begin Bits: [0x00007fa968720000, 0x00007fa96a390000)
+ End Bits:   [0x00007fa96a390000, 0x00007fa96c000000)
+
+Polling page: 0x00007fa989787000
+
+CodeCache: size=245760Kb used=7677Kb max_used=7723Kb free=238082Kb
+ bounds [0x00007fa971000000, 0x00007fa9717a0000, 0x00007fa980000000]
+ total_blobs=2385 nmethods=1756 adapters=542
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 3,129 Thread 0x00007fa9800c8000 1788   !   3       java.util.jar.Attributes::read (380 bytes)
+Event: 3,132 Thread 0x00007fa9800c8000 nmethod 1788 0x00007fa971763290 code [0x00007fa9717636e0, 0x00007fa971765be8]
+Event: 3,133 Thread 0x00007fa9800c6000 nmethod 1677 0x00007fa9717672d0 code [0x00007fa971767600, 0x00007fa971769e28]
+Event: 3,133 Thread 0x00007fa9800c6000 1754       4       sun.security.util.ManifestDigester::findSection (180 bytes)
+Event: 3,137 Thread 0x00007fa9800c6000 nmethod 1754 0x00007fa97175fdd0 code [0x00007fa97175ff40, 0x00007fa9717601d8]
+Event: 3,137 Thread 0x00007fa9800c6000 1769       4       java.math.BigInteger::addOne (77 bytes)
+Event: 3,138 Thread 0x00007fa9800c6000 nmethod 1769 0x00007fa97175e510 code [0x00007fa97175e660, 0x00007fa97175e798]
+Event: 3,138 Thread 0x00007fa9800c6000 1650 %     4       sun.security.provider.SHA::implCompress @ 12 (491 bytes)
+Event: 3,158 Thread 0x00007fa9800c3000 nmethod 1615 0x00007fa971775dd0 code [0x00007fa971776860, 0x00007fa97177f2c0]
+Event: 3,159 Thread 0x00007fa9800c3000 1796   !   4       java.util.jar.Attributes::read (380 bytes)
+
+GC Heap History (9 events):
+Event: 0,783 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 31744K [0x00000000da180000, 0x00000000dca80000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000da180000,0x00000000dc080000,0x00000000dc080000)
+  from space 5120K, 0% used [0x00000000dc580000,0x00000000dc580000,0x00000000dca80000)
+  to   space 5120K, 0% used [0x00000000dc080000,0x00000000dc080000,0x00000000dc580000)
+ ParOldGen       total 84992K, used 0K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e400000,0x0000000093700000)
+ Metaspace       used 5975K, capacity 6304K, committed 6656K, reserved 1056768K
+  class space    used 619K, capacity 656K, committed 768K, reserved 1048576K
+Event: 0,789 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 4287K [0x00000000da180000, 0x00000000dca80000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000da180000,0x00000000da180000,0x00000000dc080000)
+  from space 5120K, 83% used [0x00000000dc080000,0x00000000dc4afeb8,0x00000000dc580000)
+  to   space 5120K, 0% used [0x00000000dc580000,0x00000000dc580000,0x00000000dca80000)
+ ParOldGen       total 84992K, used 8K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e402000,0x0000000093700000)
+ Metaspace       used 5975K, capacity 6304K, committed 6656K, reserved 1056768K
+  class space    used 619K, capacity 656K, committed 768K, reserved 1048576K
+}
+Event: 1,456 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 36864K, used 36031K [0x00000000da180000, 0x00000000dca80000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000da180000,0x00000000dc080000,0x00000000dc080000)
+  from space 5120K, 83% used [0x00000000dc080000,0x00000000dc4afeb8,0x00000000dc580000)
+  to   space 5120K, 0% used [0x00000000dc580000,0x00000000dc580000,0x00000000dca80000)
+ ParOldGen       total 84992K, used 8K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e402000,0x0000000093700000)
+ Metaspace       used 9849K, capacity 9942K, committed 10112K, reserved 1058816K
+  class space    used 1109K, capacity 1137K, committed 1152K, reserved 1048576K
+Event: 1,464 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 36864K, used 4949K [0x00000000da180000, 0x00000000dca80000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000da180000,0x00000000da180000,0x00000000dc080000)
+  from space 5120K, 96% used [0x00000000dc580000,0x00000000dca557b8,0x00000000dca80000)
+  to   space 5120K, 0% used [0x00000000dc080000,0x00000000dc080000,0x00000000dc580000)
+ ParOldGen       total 84992K, used 16K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e404000,0x0000000093700000)
+ Metaspace       used 9849K, capacity 9942K, committed 10112K, reserved 1058816K
+  class space    used 1109K, capacity 1137K, committed 1152K, reserved 1048576K
+}
+Event: 1,690 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 36864K, used 35840K [0x00000000da180000, 0x00000000dca80000, 0x0000000100000000)
+  eden space 31744K, 97% used [0x00000000da180000,0x00000000dbfaaad8,0x00000000dc080000)
+  from space 5120K, 96% used [0x00000000dc580000,0x00000000dca557b8,0x00000000dca80000)
+  to   space 5120K, 0% used [0x00000000dc080000,0x00000000dc080000,0x00000000dc580000)
+ ParOldGen       total 84992K, used 16K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e404000,0x0000000093700000)
+ Metaspace       used 11204K, capacity 11302K, committed 11520K, reserved 1058816K
+  class space    used 1232K, capacity 1268K, committed 1280K, reserved 1048576K
+Event: 1,694 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 36864K, used 5117K [0x00000000da180000, 0x00000000de980000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000da180000,0x00000000da180000,0x00000000dc080000)
+  from space 5120K, 99% used [0x00000000dc080000,0x00000000dc57f520,0x00000000dc580000)
+  to   space 5120K, 0% used [0x00000000de480000,0x00000000de480000,0x00000000de980000)
+ ParOldGen       total 84992K, used 681K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e4aa7e8,0x0000000093700000)
+ Metaspace       used 11204K, capacity 11302K, committed 11520K, reserved 1058816K
+  class space    used 1232K, capacity 1268K, committed 1280K, reserved 1048576K
+}
+Event: 2,266 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 36864K, used 36861K [0x00000000da180000, 0x00000000de980000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000da180000,0x00000000dc080000,0x00000000dc080000)
+  from space 5120K, 99% used [0x00000000dc080000,0x00000000dc57f520,0x00000000dc580000)
+  to   space 5120K, 0% used [0x00000000de480000,0x00000000de480000,0x00000000de980000)
+ ParOldGen       total 84992K, used 681K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 0% used [0x000000008e400000,0x000000008e4aa7e8,0x0000000093700000)
+ Metaspace       used 17020K, capacity 17184K, committed 17408K, reserved 1064960K
+  class space    used 1878K, capacity 1933K, committed 2048K, reserved 1048576K
+Event: 2,287 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 68608K, used 5104K [0x00000000da180000, 0x00000000de980000, 0x0000000100000000)
+  eden space 63488K, 0% used [0x00000000da180000,0x00000000da180000,0x00000000ddf80000)
+  from space 5120K, 99% used [0x00000000de480000,0x00000000de97c148,0x00000000de980000)
+  to   space 5120K, 0% used [0x00000000ddf80000,0x00000000ddf80000,0x00000000de480000)
+ ParOldGen       total 84992K, used 3834K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 4% used [0x000000008e400000,0x000000008e7beb90,0x0000000093700000)
+ Metaspace       used 17020K, capacity 17184K, committed 17408K, reserved 1064960K
+  class space    used 1878K, capacity 1933K, committed 2048K, reserved 1048576K
+}
+Event: 3,163 GC heap before
+{Heap before GC invocations=5 (full 0):
+ PSYoungGen      total 68608K, used 68106K [0x00000000da180000, 0x00000000de980000, 0x0000000100000000)
+  eden space 63488K, 99% used [0x00000000da180000,0x00000000ddf069a0,0x00000000ddf80000)
+  from space 5120K, 99% used [0x00000000de480000,0x00000000de97c148,0x00000000de980000)
+  to   space 5120K, 0% used [0x00000000ddf80000,0x00000000ddf80000,0x00000000de480000)
+ ParOldGen       total 84992K, used 3834K [0x000000008e400000, 0x0000000093700000, 0x00000000da180000)
+  object space 84992K, 4% used [0x000000008e400000,0x000000008e7beb90,0x0000000093700000)
+ Metaspace       used 20340K, capacity 20564K, committed 20864K, reserved 1067008K
+  class space    used 2297K, capacity 2396K, committed 2432K, reserved 1048576K
+
+Deoptimization events (10 events):
+Event: 2,318 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa9711ed800 method=java.io.DataInputStream.readUTF(Ljava/io/DataInput;)Ljava/lang/String; @ 31
+Event: 2,323 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa97153e800 method=java.lang.StringCoding$StringEncoder.encode([CII)[B @ 20
+Event: 2,351 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa97158c258 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 181
+Event: 2,380 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa9714ed36c method=java.lang.ThreadLocal$ThreadLocalMap.getEntry(Ljava/lang/ThreadLocal;)Ljava/lang/ThreadLocal$ThreadLocalMap$Entry; @ 29
+Event: 2,522 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa97152d334 method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+Event: 2,602 Thread 0x00007fa980013800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fa9712f26a8 method=groovyjarjarantlr.InputBuffer.syncConsume()V @ 7
+Event: 2,602 Thread 0x00007fa980013800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fa9712eeb34 method=groovyjarjarantlr.InputBuffer.syncConsume()V @ 7
+Event: 2,602 Thread 0x00007fa980013800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007fa97130834c method=groovyjarjarantlr.InputBuffer.syncConsume()V @ 7
+Event: 2,648 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa9715a8884 method=java.lang.Class$MethodArray.addIfNotPresent(Ljava/lang/reflect/Method;)V @ 19
+Event: 3,100 Thread 0x00007fa980013800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa971549dcc method=java.util.jar.Attributes.read(Ljava/util/jar/Manifest$FastInputStream;[B)V @ 17
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 2,994 Thread 0x00007fa980013800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dc91ed18) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/prims/jvm.cpp, line 1502]
+Event: 2,994 Thread 0x00007fa980013800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dc91f2f8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/prims/jvm.cpp, line 1502]
+Event: 3,007 Thread 0x00007fa980013800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dcb5ebe0) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/prims/jvm.cpp, line 1502]
+Event: 3,007 Thread 0x00007fa980013800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dcb5f1c0) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/prims/jvm.cpp, line 1502]
+Event: 3,007 Thread 0x00007fa980013800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dcb6dfc8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/prims/jvm.cpp, line 1502]
+Event: 3,007 Thread 0x00007fa980013800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dcb6e5a8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/prims/jvm.cpp, line 1502]
+Event: 3,020 Thread 0x00007fa980013800 Exception <a 'java/lang/ClassNotFoundException': Script1BeanInfo> (0x00000000dcc7e170) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 3,021 Thread 0x00007fa980013800 Exception <a 'java/lang/ClassNotFoundException': Script1Customizer> (0x00000000dcca4290) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 3,026 Thread 0x00007fa980013800 Exception <a 'java/lang/ClassNotFoundException': com/kms/katalon/core/testdata/TestDataFactoryBeanInfo> (0x00000000dcd04ee8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 3,027 Thread 0x00007fa980013800 Exception <a 'java/lang/ClassNotFoundException': com/kms/katalon/core/testdata/TestDataFactoryCustomizer> (0x00000000dcd2e6b8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u201/12317/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+
+Events (10 events):
+Event: 3,119 loading class org/apache/poi/POIXMLRelation done
+Event: 3,120 loading class org/apache/poi/xssf/usermodel/XSSFRelation
+Event: 3,121 loading class org/apache/poi/xssf/usermodel/XSSFRelation done
+Event: 3,122 loading class org/apache/poi/ss/formula/udf/UDFFinder
+Event: 3,122 loading class org/apache/poi/ss/formula/udf/UDFFinder done
+Event: 3,123 loading class org/apache/xmlbeans/XmlException
+Event: 3,123 loading class org/apache/xmlbeans/XmlException done
+Event: 3,123 loading class org/openxmlformats/schemas/spreadsheetml/x2006/main/CTSheet
+Event: 3,124 loading class org/openxmlformats/schemas/spreadsheetml/x2006/main/CTSheet done
+Event: 3,161 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:05 1316764                            /opt/jdk1.8.0_201/bin/java
+00600000-00601000 r--p 00000000 08:05 1316764                            /opt/jdk1.8.0_201/bin/java
+00601000-00602000 rw-p 00001000 08:05 1316764                            /opt/jdk1.8.0_201/bin/java
+00944000-00965000 rw-p 00000000 00:00 0                                  [heap]
+8e400000-93700000 rw-p 00000000 00:00 0 
+93700000-da180000 ---p 00000000 00:00 0 
+da180000-de980000 rw-p 00000000 00:00 0 
+e3880000-100000000 ---p 00000000 00:00 0 
+100000000-100260000 rw-p 00000000 00:00 0 
+100260000-140000000 ---p 00000000 00:00 0 
+7fa934000000-7fa934021000 rw-p 00000000 00:00 0 
+7fa934021000-7fa938000000 ---p 00000000 00:00 0 
+7fa9381bb000-7fa9381ce000 r--s 00345000 08:05 1318302                    /opt/jdk1.8.0_201/jre/lib/resources.jar
+7fa9381ce000-7fa9383ce000 rw-p 00000000 00:00 0 
+7fa9383ce000-7fa93b3cf000 rw-p 00000000 00:00 0 
+7fa93b3cf000-7fa93b3e5000 r-xp 00000000 08:05 1318481                    /opt/jdk1.8.0_201/jre/lib/amd64/libnet.so
+7fa93b3e5000-7fa93b5e5000 ---p 00016000 08:05 1318481                    /opt/jdk1.8.0_201/jre/lib/amd64/libnet.so
+7fa93b5e5000-7fa93b5e6000 r--p 00016000 08:05 1318481                    /opt/jdk1.8.0_201/jre/lib/amd64/libnet.so
+7fa93b5e6000-7fa93b5e7000 rw-p 00017000 08:05 1318481                    /opt/jdk1.8.0_201/jre/lib/amd64/libnet.so
+7fa93b5e7000-7fa93b5f8000 r-xp 00000000 08:05 1318484                    /opt/jdk1.8.0_201/jre/lib/amd64/libnio.so
+7fa93b5f8000-7fa93b7f7000 ---p 00011000 08:05 1318484                    /opt/jdk1.8.0_201/jre/lib/amd64/libnio.so
+7fa93b7f7000-7fa93b7f8000 r--p 00010000 08:05 1318484                    /opt/jdk1.8.0_201/jre/lib/amd64/libnio.so
+7fa93b7f8000-7fa93b7f9000 rw-p 00011000 08:05 1318484                    /opt/jdk1.8.0_201/jre/lib/amd64/libnio.so
+7fa93b7f9000-7fa93b9f9000 rw-p 00000000 00:00 0 
+7fa93b9f9000-7fa93bbf9000 rw-p 00000000 00:00 0 
+7fa93bbf9000-7fa93bbfc000 r--s 0001a000 08:05 1318497                    /opt/jdk1.8.0_201/jre/lib/jce.jar
+7fa93bbfc000-7fa93bc00000 r--s 000a1000 08:05 1318321                    /opt/jdk1.8.0_201/jre/lib/jsse.jar
+7fa93bc00000-7fa93be00000 rw-p 00000000 00:00 0 
+7fa93be00000-7fa93c000000 rw-p 00000000 00:00 0 
+7fa93c000000-7fa93ce33000 rw-p 00000000 00:00 0 
+7fa93ce33000-7fa940000000 ---p 00000000 00:00 0 
+7fa940000000-7fa940021000 rw-p 00000000 00:00 0 
+7fa940021000-7fa944000000 ---p 00000000 00:00 0 
+7fa944000000-7fa944b5d000 rw-p 00000000 00:00 0 
+7fa944b5d000-7fa948000000 ---p 00000000 00:00 0 
+7fa948000000-7fa948b8b000 rw-p 00000000 00:00 0 
+7fa948b8b000-7fa94c000000 ---p 00000000 00:00 0 
+7fa94c000000-7fa94c021000 rw-p 00000000 00:00 0 
+7fa94c021000-7fa950000000 ---p 00000000 00:00 0 
+7fa950000000-7fa950021000 rw-p 00000000 00:00 0 
+7fa950021000-7fa954000000 ---p 00000000 00:00 0 
+7fa954000000-7fa95429b000 rw-p 00000000 00:00 0 
+7fa95429b000-7fa958000000 ---p 00000000 00:00 0 
+7fa958000000-7fa958021000 rw-p 00000000 00:00 0 
+7fa958021000-7fa95c000000 ---p 00000000 00:00 0 
+7fa95c000000-7fa95c021000 rw-p 00000000 00:00 0 
+7fa95c021000-7fa960000000 ---p 00000000 00:00 0 
+7fa960000000-7fa960021000 rw-p 00000000 00:00 0 
+7fa960021000-7fa964000000 ---p 00000000 00:00 0 
+7fa964000000-7fa964021000 rw-p 00000000 00:00 0 
+7fa964021000-7fa968000000 ---p 00000000 00:00 0 
+7fa968001000-7fa968003000 r--s 00016000 08:05 1857787                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/lib/servlet-api-2.4.jar
+7fa968003000-7fa96801c000 r--s 0013a000 08:05 1835241                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/lib/org.apache.xerces.impl_2.11.0.jar
+7fa96801c000-7fa968032000 r--s 00124000 08:05 1857786                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/lib/ivy-2.4.0.jar
+7fa968032000-7fa968035000 r--s 00019000 08:05 1857784                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/lib/bsf-2.4.0.jar
+7fa968035000-7fa96803a000 r--s 00016000 08:05 1835245                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/lib/xml-apis_1.0.0.b2.jar
+7fa96803a000-7fa9680aa000 r--s 00641000 08:05 1857785                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/lib/groovy-all-2.4.7.jar
+7fa9680aa000-7fa9680b3000 r--s 00050000 08:05 1857266                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.google.http-client.google-http-client_1.22.0.jar
+7fa9680b3000-7fa9680b6000 r--s 0000d000 08:05 1857268                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.google.oauth-client.google-oauth-client_1.22.0.jar
+7fa9680b6000-7fa9680bb000 r--s 00021000 08:05 1857590                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/wsdl4j_1.6.2.jar
+7fa9680bb000-7fa9680be000 r--s 00014000 08:05 1857318                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core.webservice_1.0.0.201905140226.jar
+7fa9680be000-7fa9680c0000 r--s 00007000 08:05 1857358                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.junit_3.0.2.jar
+7fa9680c0000-7fa9680c1000 r--s 00003000 08:05 1857359                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.tag-expressions_1.1.1.jar
+7fa9680c1000-7fa9680cf000 r--s 0003d000 08:05 1857357                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.java_3.0.2.jar
+7fa9680cf000-7fa9680d0000 r--s 00009000 08:05 1857356                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.html_0.2.7.jar
+7fa9680d0000-7fa9680d8000 r--s 0004c000 08:05 1857355                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.gherkin_5.0.0.jar
+7fa9680d8000-7fa9680da000 r--s 0000a000 08:05 1857354                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.expressions_5.0.19.jar
+7fa9680da000-7fa9680f9000 r--s 001a4000 08:05 1857352                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.datatable-dependencies_1.0.3.jar
+7fa9680f9000-7fa9680fb000 r--s 0000a000 08:05 1857353                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.datatable_1.0.3.jar
+7fa9680fb000-7fa968102000 r--s 0003f000 08:05 1857351                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/io.cucumber.core_3.0.2.jar
+7fa968102000-7fa968104000 r--s 00005000 08:05 1857316                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core.cucumber_1.0.0.201905140226.jar
+7fa968104000-7fa968107000 r--s 00028000 08:05 1857403                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.validator_1.5.0.jar
+7fa968107000-7fa968114000 r--s 00736000 08:05 1857317                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core.mobile_1.0.0.201905140226.jar
+7fa968114000-7fa968116000 r--s 0000f000 08:05 1857572                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.json_20140107.0.0.jar
+7fa968116000-7fa968122000 r--s 00206000 08:05 1857319                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core.webui_1.0.0.201905140226.jar
+7fa968122000-7fa968125000 r--s 0001b000 08:05 1857483                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar
+7fa968125000-7fa968127000 r--s 0003c000 08:05 1857315                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core.appium_1.0.0.201905140226.jar
+7fa968127000-7fa968128000 r--s 00004000 08:05 1857382                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.ant.launcher_1.9.6.jar
+7fa968128000-7fa96812d000 r--s 00041000 08:05 1857418                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.beanshell.bsh_2.0.0.0b4.jar
+7fa96812d000-7fa96812f000 r--s 0000c000 08:05 1857570                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.hamcrest.core_1.3.0.v201303031735.jar
+7fa96812f000-7fa968131000 r--s 0000e000 08:05 1857402                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.logging_1.2.0.jar
+7fa968131000-7fa968138000 r--s 00039000 08:05 1857391                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.codec_1.7.0.jar
+7fa968138000-7fa968139000 r--s 006ab000 08:05 1857335                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.netlightbody_1.0.0.201905140226.jar
+7fa968139000-7fa96813d000 r--s 00042000 08:05 1857568                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.fusesource.jansi_1.17.1.jar
+7fa96813d000-7fa96813f000 r--s 00009000 08:05 1857588                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/slf4j.api_1.7.25.jar
+7fa96813f000-7fa96814a000 r--s 00069000 08:05 1857255                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/ch.qos.logback.core_1.2.3.jar
+7fa96814a000-7fa968150000 r--s 00041000 08:05 1857254                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/ch.qos.logback.classic_1.2.3.jar
+7fa968150000-7fa968152000 r--s 00007000 08:05 1857579                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.slf4j.api_1.7.2.v20121108-1250.jar
+7fa968152000-7fa968155000 r--s 0000e000 08:05 1857256                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.fasterxml.jackson.core.jackson-annotations_2.9.1.jar
+7fa968155000-7fa96815a000 r--s 0004b000 08:05 1857257                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.fasterxml.jackson.core.jackson-core_2.9.6.jar
+7fa96815a000-7fa96816c000 r--s 00133000 08:05 1857258                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.fasterxml.jackson.core.jackson-databind_2.9.1.jar
+7fa96816c000-7fa968174000 r--s 00047000 08:05 1857574                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.junit_4.12.0.jar
+7fa968174000-7fa9681cd000 r--s 0036f000 08:05 1857417                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.assertj.core_3.10.0.jar
+7fa9681cd000-7fa9681cf000 r--s 0000d000 08:05 1857569                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.greenrobot.eventbus_3.1.1.jar
+7fa9681cf000-7fa9681d7000 r--s 00071000 08:05 1857400                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.lang3_3.6.0.jar
+7fa9681d7000-7fa9681d9000 r--s 00009000 08:05 1857409                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.httpcomponents.httpmime_4.5.1.jar
+7fa9681d9000-7fa9681e0000 r--s 00049000 08:05 1857408                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.httpcomponents.httpcore_4.4.4.jar
+7fa9681e0000-7fa9681ed000 r--s 000a9000 08:05 1857407                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.httpcomponents.httpclient_4.5.1.jar
+7fa9681ed000-7fa96821d000 r--s 0024f000 08:05 1857265                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.google.guava_23.0.0.jar
+7fa96821d000-7fa96821f000 r--s 0001c000 08:05 1857253                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/atu.testrecorder.screen-recorder_2.1.0.jar
+7fa96821f000-7fa968292000 r--s 0078f000 08:05 1857545                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.eclipse.persistence.eclipselink_2.5.0.RC1.jar
+7fa968292000-7fa9682a7000 r--s 00139000 08:05 1857544                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.eclipse.osgi_3.11.3.v20170209-1843.jar
+7fa9682a7000-7fa9682ae000 r--s 00097000 08:05 1857578                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.postgresql.jdbc41_9.4.1208.jre7.jar
+7fa9682ae000-7fa9682d4000 r--s 00368000 08:05 1857347                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.oracle.jdbc.ojdbc7_12.1.0.2.jar
+7fa9682d4000-7fa9682d7000 r--s 00011000 08:05 1857395                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.dbutils_1.6.0.jar
+7fa9682d7000-7fa9682de000 r--s 00094000 08:05 1857345                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.microsoft.sqlserver.sqljdbc4_4.1.5605.100.jar
+7fa9682de000-7fa9682e8000 r--s 000e7000 08:05 1857346                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.mysql.jdbc_5.1.38.jar
+7fa9682e8000-7fa9682ee000 r--s 00042000 08:05 1857573                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.jsoup_1.7.2.jar
+7fa9682ee000-7fa9682f3000 r--s 00035000 08:05 1857264                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.google.gson_2.8.0.jar
+7fa9682f3000-7fa968331000 r--s 00265000 08:05 1857416                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.xmlbeans_2.6.0.jar
+7fa968331000-7fa968336000 r--s 00041000 08:05 1857401                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.lang_2.6.0.jar
+7fa968336000-7fa9683ca000 r--s 00461000 08:05 1857412                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.poi.ooxml.schemas_3.9.0.v201405241750.jar
+7fa9683ca000-7fa9683d6000 r--s 000e0000 08:05 1857413                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.poi.ooxml_3.9.0.v201405241905.jar
+7fa9683d6000-7fa9683f6000 r--s 001bf000 08:05 1857414                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.poi_3.9.0.v201405241750.jar
+7fa9683f6000-7fa968426000 r--s 00208000 08:05 1857685                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/repackaged-guava-19.0.jar
+7fa968426000-7fa96844d000 r--s 0020e000 08:05 1857684                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/netty-all-4.0.51.Final.jar
+7fa96844d000-7fa96845e000 r--s 00155000 08:05 1857679                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jna-platform-4.1.0.jar
+7fa96845e000-7fa968470000 r--s 000ae000 08:05 1857673                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/bcpkix-jdk15on-1.58.jar
+7fa968470000-7fa9684be000 r--s 00fd6000 08:05 1857686                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/repackaged-sikuli-api-1.0.2-standalone.jar
+7fa9684be000-7fa96861f000 r--s 013d4000 08:05 1857688                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/selenium-server-standalone-3.7.1.jar
+7fa96861f000-7fa968620000 ---p 00000000 00:00 0 
+7fa968620000-7fa96c000000 rw-p 00000000 00:00 0 
+7fa96c000000-7fa96c021000 rw-p 00000000 00:00 0 
+7fa96c021000-7fa970000000 ---p 00000000 00:00 0 
+7fa970000000-7fa970001000 r--s 00004000 08:05 1857343                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.util_1.0.0.201905140226.jar
+7fa970001000-7fa970005000 r--s 0002a000 08:05 1857398                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.apache.commons.io_2.4.0.jar
+7fa970005000-7fa97000a000 r--s 0004c000 08:05 1857430                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.dom4j_1.6.1.v201312101416.jar
+7fa97000a000-7fa97000d000 r--s 00014000 08:05 1857381                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/net.sf.supercsv.super-csv_2.1.0.jar
+7fa97000d000-7fa970014000 r--s 00034000 08:05 1857677                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/java-client-5.0.4.jar
+7fa970014000-7fa970017000 ---p 00000000 00:00 0 
+7fa970017000-7fa970115000 rw-p 00000000 00:00 0 
+7fa970115000-7fa970116000 ---p 00000000 00:00 0 
+7fa970116000-7fa970119000 ---p 00000000 00:00 0 
+7fa970119000-7fa970216000 rw-p 00000000 00:00 0 
+7fa970216000-7fa970217000 ---p 00000000 00:00 0 
+7fa970217000-7fa97021a000 ---p 00000000 00:00 0 
+7fa97021a000-7fa970317000 rw-p 00000000 00:00 0 
+7fa970317000-7fa970318000 ---p 00000000 00:00 0 
+7fa970318000-7fa97031b000 ---p 00000000 00:00 0 
+7fa97031b000-7fa970418000 rw-p 00000000 00:00 0 
+7fa970418000-7fa97041b000 ---p 00000000 00:00 0 
+7fa97041b000-7fa970519000 rw-p 00000000 00:00 0 
+7fa970519000-7fa9707f8000 r--p 00000000 08:05 3938755                    /usr/lib/locale/locale-archive
+7fa9707f8000-7fa9707fb000 ---p 00000000 00:00 0 
+7fa9707fb000-7fa9708f9000 rw-p 00000000 00:00 0 
+7fa9708f9000-7fa9708fc000 ---p 00000000 00:00 0 
+7fa9708fc000-7fa9709fa000 rw-p 00000000 00:00 0 
+7fa9709fa000-7fa9709fb000 ---p 00000000 00:00 0 
+7fa9709fb000-7fa971000000 rw-p 00000000 00:00 0 
+7fa971000000-7fa9717a0000 rwxp 00000000 00:00 0 
+7fa9717a0000-7fa980000000 ---p 00000000 00:00 0 
+7fa980000000-7fa980f96000 rw-p 00000000 00:00 0 
+7fa980f96000-7fa984000000 ---p 00000000 00:00 0 
+7fa984000000-7fa984002000 r--s 0159b000 08:05 1857338                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.selenium-standalone_1.0.0.201905140226.jar
+7fa984002000-7fa984006000 r--s 0001e000 08:05 1857675                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/browsermob-core-2.1.5.jar
+7fa984006000-7fa984013000 r--s 000ba000 08:05 1857687                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/selenium-leg-rc-3.7.0.jar
+7fa984013000-7fa984066000 r--s 00373000 08:05 1857674                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/bcprov-jdk15on-1.58.jar
+7fa984066000-7fa984b7a000 rw-p 00000000 00:00 0 
+7fa984b7a000-7fa984d54000 r--s 03d6f000 08:05 1318264                    /opt/jdk1.8.0_201/jre/lib/rt.jar
+7fa984d54000-7fa985958000 rw-p 00000000 00:00 0 
+7fa985958000-7fa985959000 ---p 00000000 00:00 0 
+7fa985959000-7fa985a59000 rw-p 00000000 00:00 0 
+7fa985a59000-7fa985a5a000 ---p 00000000 00:00 0 
+7fa985a5a000-7fa985b5a000 rw-p 00000000 00:00 0 
+7fa985b5a000-7fa985b5b000 ---p 00000000 00:00 0 
+7fa985b5b000-7fa985c5b000 rw-p 00000000 00:00 0 
+7fa985c5b000-7fa985c5c000 ---p 00000000 00:00 0 
+7fa985c5c000-7fa985d86000 rw-p 00000000 00:00 0 
+7fa985d86000-7fa985fbb000 ---p 00000000 00:00 0 
+7fa985fbb000-7fa985fe5000 rw-p 00000000 00:00 0 
+7fa985fe5000-7fa986219000 ---p 00000000 00:00 0 
+7fa986219000-7fa98623e000 rw-p 00000000 00:00 0 
+7fa98623e000-7fa986349000 ---p 00000000 00:00 0 
+7fa986349000-7fa986369000 rw-p 00000000 00:00 0 
+7fa986369000-7fa98670a000 ---p 00000000 00:00 0 
+7fa98670a000-7fa986725000 r-xp 00000000 08:05 1318477                    /opt/jdk1.8.0_201/jre/lib/amd64/libzip.so
+7fa986725000-7fa986924000 ---p 0001b000 08:05 1318477                    /opt/jdk1.8.0_201/jre/lib/amd64/libzip.so
+7fa986924000-7fa986925000 r--p 0001a000 08:05 1318477                    /opt/jdk1.8.0_201/jre/lib/amd64/libzip.so
+7fa986925000-7fa986926000 rw-p 0001b000 08:05 1318477                    /opt/jdk1.8.0_201/jre/lib/amd64/libzip.so
+7fa986926000-7fa986931000 r-xp 00000000 08:05 267156                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fa986931000-7fa986b30000 ---p 0000b000 08:05 267156                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fa986b30000-7fa986b31000 r--p 0000a000 08:05 267156                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fa986b31000-7fa986b32000 rw-p 0000b000 08:05 267156                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fa986b32000-7fa986b38000 rw-p 00000000 00:00 0 
+7fa986b38000-7fa986b4f000 r-xp 00000000 08:05 267150                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fa986b4f000-7fa986d4e000 ---p 00017000 08:05 267150                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fa986d4e000-7fa986d4f000 r--p 00016000 08:05 267150                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fa986d4f000-7fa986d50000 rw-p 00017000 08:05 267150                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fa986d50000-7fa986d52000 rw-p 00000000 00:00 0 
+7fa986d52000-7fa986d5d000 r-xp 00000000 08:05 267167                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fa986d5d000-7fa986f5c000 ---p 0000b000 08:05 267167                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fa986f5c000-7fa986f5d000 r--p 0000a000 08:05 267167                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fa986f5d000-7fa986f5e000 rw-p 0000b000 08:05 267167                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fa986f5e000-7fa986f66000 r-xp 00000000 08:05 267152                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fa986f66000-7fa987166000 ---p 00008000 08:05 267152                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fa987166000-7fa987167000 r--p 00008000 08:05 267152                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fa987167000-7fa987168000 rw-p 00009000 08:05 267152                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fa987168000-7fa987194000 r-xp 00000000 08:05 1318471                    /opt/jdk1.8.0_201/jre/lib/amd64/libjava.so
+7fa987194000-7fa987394000 ---p 0002c000 08:05 1318471                    /opt/jdk1.8.0_201/jre/lib/amd64/libjava.so
+7fa987394000-7fa987395000 r--p 0002c000 08:05 1318471                    /opt/jdk1.8.0_201/jre/lib/amd64/libjava.so
+7fa987395000-7fa987397000 rw-p 0002d000 08:05 1318471                    /opt/jdk1.8.0_201/jre/lib/amd64/libjava.so
+7fa987397000-7fa9873a4000 r-xp 00000000 08:05 1318476                    /opt/jdk1.8.0_201/jre/lib/amd64/libverify.so
+7fa9873a4000-7fa9875a3000 ---p 0000d000 08:05 1318476                    /opt/jdk1.8.0_201/jre/lib/amd64/libverify.so
+7fa9875a3000-7fa9875a5000 r--p 0000c000 08:05 1318476                    /opt/jdk1.8.0_201/jre/lib/amd64/libverify.so
+7fa9875a5000-7fa9875a6000 rw-p 0000e000 08:05 1318476                    /opt/jdk1.8.0_201/jre/lib/amd64/libverify.so
+7fa9875a6000-7fa9875ad000 r-xp 00000000 08:05 267207                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fa9875ad000-7fa9877ac000 ---p 00007000 08:05 267207                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fa9877ac000-7fa9877ad000 r--p 00006000 08:05 267207                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fa9877ad000-7fa9877ae000 rw-p 00007000 08:05 267207                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fa9877ae000-7fa98794b000 r-xp 00000000 08:05 267129                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fa98794b000-7fa987b4a000 ---p 0019d000 08:05 267129                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fa987b4a000-7fa987b4b000 r--p 0019c000 08:05 267129                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fa987b4b000-7fa987b4c000 rw-p 0019d000 08:05 267129                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fa987b4c000-7fa988834000 r-xp 00000000 08:05 1318453                    /opt/jdk1.8.0_201/jre/lib/amd64/server/libjvm.so
+7fa988834000-7fa988a33000 ---p 00ce8000 08:05 1318453                    /opt/jdk1.8.0_201/jre/lib/amd64/server/libjvm.so
+7fa988a33000-7fa988ac9000 r--p 00ce7000 08:05 1318453                    /opt/jdk1.8.0_201/jre/lib/amd64/server/libjvm.so
+7fa988ac9000-7fa988afa000 rw-p 00d7d000 08:05 1318453                    /opt/jdk1.8.0_201/jre/lib/amd64/server/libjvm.so
+7fa988afa000-7fa988b35000 rw-p 00000000 00:00 0 
+7fa988b35000-7fa988d1c000 r-xp 00000000 08:05 267066                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fa988d1c000-7fa988f1c000 ---p 001e7000 08:05 267066                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fa988f1c000-7fa988f20000 r--p 001e7000 08:05 267066                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fa988f20000-7fa988f22000 rw-p 001eb000 08:05 267066                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fa988f22000-7fa988f26000 rw-p 00000000 00:00 0 
+7fa988f26000-7fa988f29000 r-xp 00000000 08:05 267089                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fa988f29000-7fa989128000 ---p 00003000 08:05 267089                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fa989128000-7fa989129000 r--p 00002000 08:05 267089                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fa989129000-7fa98912a000 rw-p 00003000 08:05 267089                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fa98912a000-7fa989141000 r-xp 00000000 08:05 1318126                    /opt/jdk1.8.0_201/lib/amd64/jli/libjli.so
+7fa989141000-7fa989340000 ---p 00017000 08:05 1318126                    /opt/jdk1.8.0_201/lib/amd64/jli/libjli.so
+7fa989340000-7fa989341000 r--p 00016000 08:05 1318126                    /opt/jdk1.8.0_201/lib/amd64/jli/libjli.so
+7fa989341000-7fa989342000 rw-p 00017000 08:05 1318126                    /opt/jdk1.8.0_201/lib/amd64/jli/libjli.so
+7fa989342000-7fa98935c000 r-xp 00000000 08:05 267199                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fa98935c000-7fa98955b000 ---p 0001a000 08:05 267199                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fa98955b000-7fa98955c000 r--p 00019000 08:05 267199                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fa98955c000-7fa98955d000 rw-p 0001a000 08:05 267199                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fa98955d000-7fa989561000 rw-p 00000000 00:00 0 
+7fa989561000-7fa989588000 r-xp 00000000 08:05 267038                     /lib/x86_64-linux-gnu/ld-2.27.so
+7fa989588000-7fa989589000 r--s 00005000 08:05 1857313                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.constant_1.0.0.201905140226.jar
+7fa989589000-7fa98958b000 r--s 00010000 08:05 1857680                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jzlib-1.1.3.jar
+7fa98958b000-7fa98958c000 r--s 00000000 08:05 1857681                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/kat-server.jar
+7fa98958c000-7fa989590000 r--s 000dc000 08:05 1857678                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jna-4.1.0.jar
+7fa989590000-7fa98959d000 r--s 000ae000 08:05 1857689                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/testng-6.11.jar
+7fa98959d000-7fa989665000 rw-p 00000000 00:00 0 
+7fa989665000-7fa989666000 ---p 00000000 00:00 0 
+7fa989666000-7fa989669000 ---p 00000000 00:00 0 
+7fa989669000-7fa98976a000 rw-p 00000000 00:00 0 
+7fa98976a000-7fa98976d000 r--s 0001d000 08:05 1857682                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/littleproxy-1.1.0-beta-bmp-17.jar
+7fa98976d000-7fa989772000 r--s 00048000 08:05 1857676                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/dnsjava-2.1.8.jar
+7fa989772000-7fa989775000 r--s 00033000 08:05 1857683                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/mitm-2.1.5.jar
+7fa989775000-7fa98977e000 r--s 00081000 08:05 1857320                    /home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core_1.0.0.201905140226.jar
+7fa98977e000-7fa989786000 rw-s 00000000 08:05 3670805                    /tmp/hsperfdata_bondhan/2805
+7fa989786000-7fa989787000 rw-p 00000000 00:00 0 
+7fa989787000-7fa989788000 ---p 00000000 00:00 0 
+7fa989788000-7fa989789000 r--p 00027000 08:05 267038                     /lib/x86_64-linux-gnu/ld-2.27.so
+7fa989789000-7fa98978a000 rw-p 00028000 08:05 267038                     /lib/x86_64-linux-gnu/ld-2.27.so
+7fa98978a000-7fa98978b000 rw-p 00000000 00:00 0 
+7fffead17000-7fffead3c000 rw-p 00000000 00:00 0                          [stack]
+7fffead64000-7fffead67000 r--p 00000000 00:00 0                          [vvar]
+7fffead67000-7fffead69000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dgroovy.home=/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/ -Xmx1820m -Dfile.encoding=UTF-8 
+java_command: org.codehaus.groovy.tools.GroovyStarter --classpath /home/bondhan/git/katalon-ewallet/Include/scripts/groovy:/home/bondhan/git/katalon-ewallet/Keywords:/home/bondhan/git/katalon-ewallet/Libs:/home/bondhan/git/katalon-ewallet/Test Listeners:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/bcpkix-jdk15on-1.58.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/bcprov-jdk15on-1.58.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/browsermob-core-2.1.5.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/dnsjava-2.1.8.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/java-client-5.0.4.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jna-4.1.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jna-platform-4.1.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jzlib-1.1.3.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/kat-server.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/littleproxy-1.1.0-beta-bmp-17.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/mitm-2.1.5.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/netty-all-4.0.51.Final.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/repackaged-guava-19.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/repackaged-sikuli-api-1.0.2-standalone.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/selenium-leg-rc-3.7.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/selenium-server-standalone-3.7.1.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/testng-6.11.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.
+java_class_path (initial): /home/bondhan/git/katalon-ewallet/bin/keyword:/home/bondhan/git/katalon-ewallet/bin/listener:/home/bondhan/git/katalon-ewallet/bin/lib:/home/bondhan/git/katalon-ewallet/bin/groovy:/home/bondhan/git/katalon-ewallet/bin:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/plugins/com.kms.katalon.core_1.0.0.201905140226.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/selenium-server-standalone-3.7.1.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/mitm-2.1.5.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/dnsjava-2.1.8.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/littleproxy-1.1.0-beta-bmp-17.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/bcprov-jdk15on-1.58.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/repackaged-sikuli-api-1.0.2-standalone.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/testng-6.11.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jna-4.1.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/selenium-leg-rc-3.7.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/java-client-5.0.4.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/bcpkix-jdk15on-1.58.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/kat-server.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/jna-platform-4.1.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/netty-all-4.0.51.Final.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/browsermob-core-2.1.5.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5/configuration/resources/lib/repackaged-guava-19.0.jar:/home/bondhan/opt/Katalon_studio_Linux_64-6.1.5
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/jdk1.8.0_201
+PATH=/home/bondhan/.local/bin:/home/bondhan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/jdk1.8.0_201/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xad3e60], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xad3e60], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x90b880], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x90b880], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x90b880], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x90b880], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x90b750], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x90bd70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x90bd70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x90bd70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x90bd70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=LinuxMint
+DISTRIB_RELEASE=19.1
+DISTRIB_CODENAME=tessa
+DISTRIB_DESCRIPTION="Linux Mint 19.1 Tessa"
+
+uname:Linux 4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 30417, NOFILE 1048576, AS infinity
+load average:2,75 2,68 2,40
+
+/proc/meminfo:
+MemTotal:        8049188 kB
+MemFree:          116860 kB
+MemAvailable:      25388 kB
+Buffers:             692 kB
+Cached:           602116 kB
+SwapCached:        15812 kB
+Active:          6556352 kB
+Inactive:        1004380 kB
+Active(anon):    6544076 kB
+Inactive(anon):   990988 kB
+Active(file):      12276 kB
+Inactive(file):    13392 kB
+Unevictable:         308 kB
+Mlocked:             308 kB
+SwapTotal:       2097148 kB
+SwapFree:              0 kB
+Dirty:               300 kB
+Writeback:             0 kB
+AnonPages:       6943560 kB
+Mapped:           390104 kB
+Shmem:            576448 kB
+Slab:             169964 kB
+SReclaimable:      63012 kB
+SUnreclaim:       106952 kB
+KernelStack:       20704 kB
+PageTables:        95196 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6121740 kB
+Committed_AS:   17668828 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      368136 kB
+DirectMap2M:     7901184 kB
+DirectMap1G:           0 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-3
+cpu_memory_nodes: 0
+active_processor_count: 4
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 7767801856
+memory_max_usage_in_bytes: 7784042496
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x25
+cpu MHz		: 2739.163
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5187.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x25
+cpu MHz		: 2791.055
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5187.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x25
+cpu MHz		: 2768.068
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5187.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x25
+cpu MHz		: 2746.593
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 5187.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8049188k(122300k free), swap 2097148k(0k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.201-b09) for linux-amd64 JRE (1.8.0_201-b09), built on Dec 15 2018 11:35:59 by "java_re" with gcc 7.3.0
+
+time: Tue May 28 16:22:17 2019
+timezone: WIB
+elapsed time: 3 seconds (0d 0h 0m 3s)
+

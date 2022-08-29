@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_getTransactionOverview</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5086a1d5-9d53-461d-a036-d4b8e0d2f3a3</testCaseGuid>
+   <variable>
+      <defaultValue>'RC00'</defaultValue>
+      <description></description>
+      <id>66b88f90-ffb3-4cab-bdb9-aa44f194b3b2</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>09431a90-3d65-4d0c-b532-8729fb147dfc</id>
+      <masked>false</masked>
+      <name>var_customer_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.partner_token_texo</defaultValue>
+      <description></description>
+      <id>86a0d389-c94a-4a9b-9347-48e0bbbfc81e</id>
+      <masked>false</masked>
+      <name>var_partner_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.access_token_customer</defaultValue>
+      <description></description>
+      <id>6e21fa43-b6d6-4b57-9900-a3fa499051a5</id>
+      <masked>false</masked>
+      <name>access_token_customer</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>33092056-8efe-42c4-807a-b460679cc7c2</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

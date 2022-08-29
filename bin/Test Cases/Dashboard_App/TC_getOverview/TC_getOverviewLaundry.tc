@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_getOverviewLaundry</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>03c2cc3b-0811-45d0-9942-c2f3c0adc35e</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4654efd6-7b9c-4abc-b145-f7a369c535f6</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>72bfeb03-e696-4c9f-bb94-becf845e81df</id>
+      <masked>false</masked>
+      <name>var_merchant_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.partner_token_texo</defaultValue>
+      <description></description>
+      <id>70d729ee-bff4-4768-9b2a-d8b7246d5682</id>
+      <masked>false</masked>
+      <name>var_partner_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.access_token_merchant</defaultValue>
+      <description></description>
+      <id>7144e9d4-7f78-4dfb-ad12-19a97d3f11b5</id>
+      <masked>false</masked>
+      <name>access_token_merchant</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>b5a3af0d-1d1b-46f8-8a98-5006132a85ab</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

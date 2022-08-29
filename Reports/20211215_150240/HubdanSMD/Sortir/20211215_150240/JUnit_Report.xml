@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Sortir" time="4.337" tests="2" failures="0" errors="0">
+   <testsuite name="Sortir" tests="2" failures="0" errors="0" time="4.337" timestamp="2021-12-15 15:02:46" hostname="rianf - LAPTOP-L45JQDGE" id="Test Suites/HubdanSMD/Sortir">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\20211215_150240\\HubdanSMD\\Sortir\\20211215_150240"/>
+         <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\20211215_150240\\HubdanSMD\\Sortir\\20211215_150240\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="rianf - LAPTOP-L45JQDGE"/>
+         <property name="hostAddress" value="10.255.255.196"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="7.0.0.1"/>
+      </properties>
+      <testcase name="Test Cases/HUB/get_gabung_paket" time="3.358" classname="Test Cases/HUB/get_gabung_paket" status="PASSED">
+         <system-out><![CDATA[2021-12-15 15:02:46 - [TEST_CASE][PASSED] - Test Cases/HUB/get_gabung_paket: Test Cases/HUB/get_gabung_paket
+
+2021-12-15 15:02:47 - [TEST_STEP][PASSED] - request = findTestObject("Object Repository/hubdansmd/get_bag_number"): null
+
+2021-12-15 15:02:47 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully
+
+2021-12-15 15:02:49 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\20211215_150240\HubdanSMD\Sortir\20211215_150240\requests\main\0.har
+
+2021-12-15 15:02:49 - [MESSAGE][PASSED] - Send request successfully
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - slurper = new groovy.json.JsonSlurper(): null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - result = slurper.parseText(response.getResponseBodyContent()): null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - bag_number = bag_number + "001": null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - no_resi = awb_number: null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - println(bag_number): null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - println(no_resi): null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - nomor_resi = no_resi: null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - resi = nomor_resi: null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - println(resi): null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - status_code = statusCode: null
+
+2021-12-15 15:02:49 - [TEST_STEP][PASSED] - println(status_code): null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/HUB/create_gabung_sortir" time="0.741" classname="Test Cases/HUB/create_gabung_sortir" status="PASSED">
+         <system-out><![CDATA[2021-12-15 15:02:49 - [TEST_CASE][PASSED] - Test Cases/HUB/create_gabung_sortir: Test Cases/HUB/create_gabung_sortir
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - resi = resi: null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - plain = "[" + """ + resi + """ + "]": null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - out.println(plain): null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - body = "{"reference_numbers":" + plain + "," + ""chute_number":"84"," + ""sorting_branch_id": 4101}": null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - request = findTestObject("hubdansmd/create_gabung_sortir"): null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully
+
+2021-12-15 15:02:50 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\20211215_150240\HubdanSMD\Sortir\20211215_150240\requests\main\1.har
+
+2021-12-15 15:02:50 - [MESSAGE][PASSED] - Send request successfully
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - slurper = new groovy.json.JsonSlurper(): null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - result = slurper.parseText(response.getResponseBodyContent()): null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - status_code = statusCode: null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - println(status_code): null
+
+2021-12-15 15:02:50 - [TEST_STEP][PASSED] - println(result): null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2021-12-15 15:02:46 - [TEST_SUITE][PASSED] - Sortir: Test Cases/HUB/create_gabung_sortir]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

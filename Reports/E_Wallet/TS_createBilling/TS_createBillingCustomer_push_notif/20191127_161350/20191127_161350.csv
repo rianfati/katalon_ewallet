@@ -1,0 +1,32 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_createBillingCustomer_push_notif,,,,2019-11-27 16:13:52,2019-11-27 16:13:55,2.900s,INCOMPLETE
+,,,,,,,
+Test Cases/E_Wallet/TC_createBilling/TC_createBillingCustomer,,,,2019-11-27 16:13:52,2019-11-27 16:13:55,2.677s,PASSED
+trace_number = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.002s,PASSED
+trace_number = Math.random() * 1000000000,,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.012s,PASSED
+partner_token = var_partner_token,,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.002s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"trx_type_id"":"""" + var_trx_type_id + """","" + """"to"":"""" + var_to + """","" + """"to_id"":"""" + var_to_id + """","" + """"amount"":"""" + var_amount + """","" + """"wallet_id"":"""" + var_wallet_id + """","" + """"billing_ref1"":"""" + var_billing_ref1 + """","" + """"billing_ref2"":"""" + var_billing_ref2 + """","" + """"billing_ref3"":"""" + var_billing_ref3 + """","" + """"trace_number"":"""" + var_trace_number + """","" + """"need_verify"":"""" + var_need_verify + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"qr_unique_code"":"""" + var_unique_code + """"}""",,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.002s,PASSED
+out.println(plain),,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.008s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-11-27 16:13:53,2019-11-27 16:13:53,0.001s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-27 16:13:53,2019-11-27 16:13:54,0.818s,PASSED
+"body = ""{""organisation_id"":""1"",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.001s,PASSED
+out.println(body),,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.001s,PASSED
+request = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.001s,PASSED
+"if (obj_model == ""1"")",,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.001s,PASSED
+else,,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.077s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.001s,PASSED
+else,,,,2019-11-27 16:13:54,2019-11-27 16:13:54,0.004s,PASSED
+response = sendRequest(request),,,,2019-11-27 16:13:54,2019-11-27 16:13:55,0.983s,PASSED
+println(partner_token),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.003s,PASSED
+body_content = responseBodyContent,,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.004s,PASSED
+status_code = statusCode,,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.012s,PASSED
+out.println(respDataMap),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.012s,PASSED
+out.println(var_expected_rc),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.002s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.002s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.019s,PASSED
+if (result == false),,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.000s,PASSED
+else,,,,2019-11-27 16:13:55,2019-11-27 16:13:55,0.013s,PASSED

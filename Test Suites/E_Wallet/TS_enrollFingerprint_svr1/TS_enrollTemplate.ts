@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_enrollTemplate</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>38304c43-e6d4-4c60-8687-656ccb11def5</testSuiteGuid>
+   <testCaseLink>
+      <guid>86d6143d-a759-4fc1-93eb-44152ea5ccb8</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/E_Wallet/Enroll fingerprint (fingerprint svc)/Enroll Template</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>bb4aae2a-1dec-42fb-b1f5-07993c5bacfe</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>1-1</value>
+         </iterationEntity>
+         <testDataId>Data Files/E_Wallet/DF_enrollFingerprint_svr1/DF_template</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>bb4aae2a-1dec-42fb-b1f5-07993c5bacfe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_template</value>
+         <variableId>230a19d2-6c45-4fa5-b20c-0bc96bbb1b4c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>bb4aae2a-1dec-42fb-b1f5-07993c5bacfe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_user_id</value>
+         <variableId>b435c0a1-65bd-49fc-9e84-b2f3b8562d07</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>bb4aae2a-1dec-42fb-b1f5-07993c5bacfe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_request_id</value>
+         <variableId>966bc9c0-f679-4220-8748-b681d5daa082</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>b4aeb498-d9cf-47b1-a252-536590fee8b1</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>bb4aae2a-1dec-42fb-b1f5-07993c5bacfe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_expected_rc</value>
+         <variableId>ec621a76-bf51-43f8-854e-82f51b41f717</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

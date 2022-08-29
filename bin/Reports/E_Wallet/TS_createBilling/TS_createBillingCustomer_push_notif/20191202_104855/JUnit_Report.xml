@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testsuites name="TS_createBillingCustomer_push_notif" time="3" tests="2" failures="0" errors="0">
+    <testsuite name="TS_createBillingCustomer_push_notif" tests="2" failures="0" errors="0" time="3" timestamp="2019-12-02 10:48:57" hostname="Silvi - LAPTOP-ALMT97O4" id="Test Suites/E_Wallet/TS_createBilling/TS_createBillingCustomer_push_notif">
+        <properties>
+            <property name="deviceName" value=""/>
+            <property name="devicePlatform" value=""/>
+            <property name="logFolder" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_createBilling\\TS_createBillingCustomer_push_notif\\20191202_104855"/>
+            <property name="logFiles" value="D:\\katalon-ewallet\\Reports\\E_Wallet\\TS_createBilling\\TS_createBillingCustomer_push_notif\\20191202_104855\\execution0.log"/>
+            <property name="attachments" value=""/>
+            <property name="hostName" value="Silvi - LAPTOP-ALMT97O4"/>
+            <property name="hostAddress" value="172.18.4.57"/>
+            <property name="os" value="Windows 10 64bit"/>
+            <property name="katalonVersion" value="6.2.2.4"/>
+        </properties>
+        <testcase name="Test Cases/Account/TC_loginCustomer/Login_Customer_Rian" classname="Test Cases/Account/TC_loginCustomer/Login_Customer_Rian" status="PASSED">
+            <system-out>2019-12-02 10:48:57 - [TEST_CASE][PASSED] - Test Cases/Account/TC_loginCustomer/Login_Customer_Rian: Test Cases/Account/TC_loginCustomer/Login_Customer_Rian&#xD;
+&#xD;
+2019-12-02 10:48:58 - [TEST_STEP][PASSED] - var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin): null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + ""," + ""phone_number":"" + var_phone_number + ""," + ""pin":"" + var_enciphered_pin + ""," + ""device_id":"" + var_device_id + ""," + ""fcm_token":"" + var_fcm_token + ""}": null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - body = "{"organisation_id":"1","data":"" + encipheredData + "","lang":"id"}": null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - request = findTestObject("Account/obj_loginCustomer"): null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-02 10:48:59 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_createBilling\TS_createBillingCustomer_push_notif\20191202_104855\requests\main\0.har&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - rcIsTrue = verifyEqual(response_code, rc_ref.getRCName()): Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][PASSED] - Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse()): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - if (rc_ref == RC00): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - decipheredResponseData = SecureUtils.decryptAesEwallet(data, var_aes_key): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - decipheredRespDataMap = JsonSlurper().parseText(decipheredResponseData): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(decipheredRespDataMap): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - access_token_customer = access_token: null</system-out>
+            <system-err></system-err>
+        </testcase>
+        <testcase name="Test Cases/Account/TC_loginCustomer/Login_Customer_Rian" classname="Test Cases/Account/TC_loginCustomer/Login_Customer_Rian" status="PASSED">
+            <system-out>2019-12-02 10:49:00 - [TEST_CASE][PASSED] - Test Cases/Account/TC_loginCustomer/Login_Customer_Rian: Test Cases/Account/TC_loginCustomer/Login_Customer_Rian&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - plain = "{" + ""user_agent":"" + var_user_agent + ""," + ""phone_number":"" + var_phone_number + ""," + ""pin":"" + var_enciphered_pin + ""," + ""device_id":"" + var_device_id + ""," + ""fcm_token":"" + var_fcm_token + ""}": null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(plain): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - body = "{"organisation_id":"1","data":"" + encipheredData + "","lang":"id"}": null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(body): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - request = findTestObject("Account/obj_loginCustomer"): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json)): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - response = sendRequest(request): Send request successfully&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][INFO] - HAR: D:\katalon-ewallet\Reports\E_Wallet\TS_createBilling\TS_createBillingCustomer_push_notif\20191202_104855\requests\main\1.har&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][PASSED] - Send request successfully&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - body_content = responseBodyContent: null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - status_code = statusCode: null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - respDataMap = JsonSlurper().parseText(body_content): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(respDataMap): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(var_expected_rc): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(rc_ref.getRCName()): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(rc_ref.getHttpResponse()): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - rcIsTrue = verifyEqual(response_code, rc_ref.getRCName()): Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][PASSED] - Actual object 'RC00' and expected object 'RC00' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse()): Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [MESSAGE][PASSED] - Actual object '200' and expected object '200' are equal&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - if (rc_ref == RC00): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - decipheredResponseData = SecureUtils.decryptAesEwallet(data, var_aes_key): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - decipheredRespDataMap = JsonSlurper().parseText(decipheredResponseData): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - out.println(decipheredRespDataMap): null&#xD;
+&#xD;
+2019-12-02 10:49:00 - [TEST_STEP][PASSED] - access_token_customer = access_token: null</system-out>
+            <system-err></system-err>
+        </testcase>
+        <system-out>2019-12-02 10:48:57 - [TEST_SUITE][INCOMPLETE] - TS_createBillingCustomer_push_notif: null</system-out>
+        <system-err>2019-12-02 10:48:57 - [TEST_SUITE][INCOMPLETE] - TS_createBillingCustomer_push_notif: null</system-err>
+    </testsuite>
+</testsuites>

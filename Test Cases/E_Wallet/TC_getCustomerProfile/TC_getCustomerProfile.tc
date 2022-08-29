@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_getCustomerProfile</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3c0218f3-ae80-477d-9f61-427af718bfe8</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>51c075a2-7a74-4b2a-be7f-ca58e26a2376</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fffe98b7-f029-498e-a0e6-61967a9da95d</id>
+      <masked>false</masked>
+      <name>var_customer_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.partner_token_texo</defaultValue>
+      <description></description>
+      <id>8c68fe03-f66b-4f80-94d0-d7f0292ba0a3</id>
+      <masked>false</masked>
+      <name>var_partner_token</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.access_token_customer</defaultValue>
+      <description></description>
+      <id>5391cf6e-6419-4475-b876-7257240c9c61</id>
+      <masked>false</masked>
+      <name>access_token_customer</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>f34e47bd-6a6d-4d70-bfeb-5d98f52af60f</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

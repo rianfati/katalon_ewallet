@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_inquiryEwallet</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>102dd313-bfba-44e1-9f3d-129eb544d5fd</testSuiteGuid>
+   <testCaseLink>
+      <guid>dd9480d8-c73d-4e48-97cf-c9e33895a8dd</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/E_Wallet/TC_inquiryEwallet1/TC_inquiryEwallet1</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>eec7cedb-8d6c-44ec-ac9f-634b45e272d4</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value>5</value>
+         </iterationEntity>
+         <testDataId>Data Files/E_Wallet/DF_inquiryEwallet1/DF_inquiryEwallet1</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>eec7cedb-8d6c-44ec-ac9f-634b45e272d4</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>user_agent</value>
+         <variableId>67af9c07-1675-4014-bd9b-344ab3927dc1</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>eec7cedb-8d6c-44ec-ac9f-634b45e272d4</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>issuer_code</value>
+         <variableId>13faa506-96c0-4d4c-93fb-6ff2de9de5e0</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>eec7cedb-8d6c-44ec-ac9f-634b45e272d4</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>expected_rc</value>
+         <variableId>afa3f845-03ec-4906-9b81-513ca953c199</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>1fa3bbc7-6437-4612-bff3-e035054c2298</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>eec7cedb-8d6c-44ec-ac9f-634b45e272d4</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>account_no_cid</value>
+         <variableId>ec0283d9-fb23-40f2-9688-540833773799</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

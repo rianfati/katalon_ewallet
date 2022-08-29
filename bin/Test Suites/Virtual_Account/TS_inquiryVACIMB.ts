@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS_inquiryVACIMB</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>abede79f-576f-4b54-9aa1-8287096c4103</testSuiteGuid>
+   <testCaseLink>
+      <guid>0b6d2215-e7da-43f6-b7d6-48b5e3c5f236</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Virtual_Account/TC_inquiryVACIMB</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>80c014b5-5ca7-417f-8c3a-66c0f9379632</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Virtual_Account/DTF_inquiryVACIMB</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>80c014b5-5ca7-417f-8c3a-66c0f9379632</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>trace_number</value>
+         <variableId>ad990039-9c36-4046-bfbf-321858bcfd5f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>80c014b5-5ca7-417f-8c3a-66c0f9379632</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>expected_rc</value>
+         <variableId>6b110ad0-b3bf-40c9-9152-2259e58fc324</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>adc36f67-5d75-4da0-91c5-903e7c95333b</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

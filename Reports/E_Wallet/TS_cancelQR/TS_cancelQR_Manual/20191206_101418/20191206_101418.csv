@@ -1,0 +1,25 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_cancelQR_Manual,,,,2019-12-06 10:14:20,2019-12-06 10:14:22,2.801s,INCOMPLETE
+,,,,,,,
+Test Cases/E_Wallet/TC_cancelQR/TC_cancelQR,,,,2019-12-06 10:14:20,2019-12-06 10:14:22,2.610s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"unique_code"":"""" + var_unique_code + """"}""",,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.003s,PASSED
+partner_token = partner_token,,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.002s,PASSED
+out.println(plain),,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.009s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.862s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.001s,PASSED
+out.println(body),,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_cancelQR"")",,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.050s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.009s,PASSED
+if (var_customer_token == 0),,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.001s,PASSED
+else,,,,2019-12-06 10:14:21,2019-12-06 10:14:21,0.012s,PASSED
+response = sendRequest(request),,,,2019-12-06 10:14:21,2019-12-06 10:14:22,0.945s,PASSED
+println(request.getRestUrl()),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.004s,PASSED
+body_content = responseBodyContent,,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.005s,PASSED
+status_code = statusCode,,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.012s,PASSED
+out.println(respDataMap),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.002s,PASSED
+println(body_content),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.020s,PASSED
+out.println(var_expected_rc),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.003s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-06 10:14:22,2019-12-06 10:14:22,0.002s,PASSED

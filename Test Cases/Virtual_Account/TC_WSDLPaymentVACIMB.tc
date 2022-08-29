@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_WSDLPaymentVACIMB</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5670e2c9-995d-4c2d-9e28-2d4f74b5cd2e</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6cb23ed2-e270-4d1b-bf99-e43f30fff5e0</id>
+      <masked>false</masked>
+      <name>CustomerKey1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>02c6bfdb-c0c1-492b-8de7-86c27b9ed48e</id>
+      <masked>false</masked>
+      <name>Amount</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fa5c7167-37f3-49cf-be36-34536c37246f</id>
+      <masked>false</masked>
+      <name>var_sc</name>
+   </variable>
+</TestCaseEntity>

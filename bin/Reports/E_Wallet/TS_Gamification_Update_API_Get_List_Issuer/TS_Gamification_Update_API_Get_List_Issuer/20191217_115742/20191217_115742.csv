@@ -1,0 +1,377 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:44,2019-12-17 11:57:51,6.608s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/TC_login081266483909,,,,2019-12-17 11:57:44,2019-12-17 11:57:47,2.689s,PASSED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_user_pin)",,,,2019-12-17 11:57:45,2019-12-17 11:57:46,0.971s,PASSED
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"phone_number"":"""" + var_phone_number + """","" + """"pin"":"""" + var_enciphered_pin + """","" + """"device_id"":"""" + var_device_id + """","" + """"fcm_token"":"""" + var_fcm_token + """"}""",,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.001s,PASSED
+out.println(plain),,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.007s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.020s,PASSED
+"body = ""{""organisation_id"":""1"",""data"":"""" + encipheredData + """",""lang"":""id""}""",,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.001s,PASSED
+out.println(body),,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.001s,PASSED
+"request = findTestObject(""Account/obj_loginCustomer"")",,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.047s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-17 11:57:46,2019-12-17 11:57:46,0.009s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:46,2019-12-17 11:57:47,0.823s,PASSED
+println(request.getRestUrl()),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.003s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.006s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.003s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.014s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.004s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.015s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.003s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.002s,PASSED
+"rcIsTrue = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.023s,PASSED
+"httpRespIsTrue = verifyEqual(statusCode, rc_ref.getHttpResponse())",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.003s,PASSED
+if (rc_ref == RC00),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.006s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.395s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.037s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.012s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.107s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.002s,PASSED
+println(body_content),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.003s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.006s,PASSED
+if (result == false),,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.002s,PASSED
+else,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.009s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:47,2019-12-17 11:57:48,0.215s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.058s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:47,2019-12-17 11:57:47,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:47,2019-12-17 11:57:48,0.086s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.002s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.004s,PASSED
+if (result == false),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+else,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.004s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.316s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.002s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.080s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.147s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+if (result == false),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+else,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.007s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.239s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.063s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.098s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+if (result == false),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+else,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.005s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.212s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.063s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.002s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.086s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.002s,PASSED
+if (result == false),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+else,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.169s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.047s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.082s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.001s,PASSED
+if (result == false),,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.000s,PASSED
+else,,,,2019-12-17 11:57:48,2019-12-17 11:57:48,0.003s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:48,2019-12-17 11:57:49,0.194s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.046s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.091s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.003s,PASSED
+if (result == false),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+else,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.007s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.189s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.048s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.080s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.003s,PASSED
+if (result == false),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+else,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.004s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.182s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.048s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.002s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.076s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.003s,PASSED
+if (result == false),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+else,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.004s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.183s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.055s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.079s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.003s,PASSED
+if (result == false),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+else,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.005s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.149s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.040s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.071s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.002s,PASSED
+if (result == false),,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+else,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.002s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:49,2019-12-17 11:57:50,0.166s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.047s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:49,2019-12-17 11:57:49,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:49,2019-12-17 11:57:50,0.079s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+if (result == false),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+else,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.002s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.182s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.047s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.002s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.099s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+if (result == false),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+else,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.178s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.042s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.003s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.086s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.002s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.004s,PASSED
+if (result == false),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+else,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.005s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.484s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.042s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.392s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+println(body_content),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+if (result == false),,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+else,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.002s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/TC_Gamification_Update_API_Get_List_Issuer/TC_Gamification_Update_API_Get_List_Issuer,,,,2019-12-17 11:57:50,2019-12-17 11:57:51,0.170s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+edc_id = edc_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+trx_type_id = trx_type_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.000s,PASSED
+out_id = out_id,,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.001s,PASSED
+"request = findTestObject(""E_Wallet/obj_Gamification_Update_API_Get_List_Issuer"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.036s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-17 11:57:50,2019-12-17 11:57:50,0.002s,PASSED
+response = sendRequest(request),,,,2019-12-17 11:57:50,2019-12-17 11:57:51,0.097s,PASSED
+body_content = responseBodyContent,,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+status_code = statusCode,,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+out.println(respDataMap),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.001s,PASSED
+println(body_content),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+out.println(var_expected_rc),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.002s,PASSED
+if (result == false),,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.000s,PASSED
+else,,,,2019-12-17 11:57:51,2019-12-17 11:57:51,0.002s,PASSED

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_inquiryVACIMB</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>35e988b1-0fb5-4301-acd0-8579ed9c40aa</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ad990039-9c36-4046-bfbf-321858bcfd5f</id>
+      <masked>false</masked>
+      <name>trace_number</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6b110ad0-b3bf-40c9-9152-2259e58fc324</id>
+      <masked>false</masked>
+      <name>var_expected_rc</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.aes_key_org_texo</defaultValue>
+      <description></description>
+      <id>adc36f67-5d75-4da0-91c5-903e7c95333b</id>
+      <masked>false</masked>
+      <name>var_aes_key</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,30 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_generateQRLaundry,,,,2019-11-28 11:54:48,2019-11-28 11:54:53,5.176s,INCOMPLETE
+,,,,,,,
+Test Cases/E_Wallet/TC_generateQRNew/TC_generateQRLaundry/TC_generateQRLaundry,,,,2019-11-28 11:54:48,2019-11-28 11:54:53,4.856s,ERROR
+"plain = ""{"" + """"user_agent"":"""" + var_user_agent + """","" + """"chip_id"":"""" + var_chip_id + """","" + """"raspberry_id"":"""" + var_raspberry_id + """","" + """"action"":"""" + var_action + """","" + """"pixel_size"":"""" + var_pixel_size + """"}""",,,,2019-11-28 11:54:49,2019-11-28 11:54:49,0.002s,PASSED
+out.println(plain),,,,2019-11-28 11:54:49,2019-11-28 11:54:49,0.010s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-11-28 11:54:49,2019-11-28 11:54:49,0.891s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-11-28 11:54:49,2019-11-28 11:54:49,0.001s,PASSED
+out.println(body),,,,2019-11-28 11:54:49,2019-11-28 11:54:49,0.001s,PASSED
+"header1 = new com.kms.katalon.core.testobject.TestObjectProperty(partner-token, com.kms.katalon.core.testobject.ConditionType.EQUALS, var_partner_token)",,,,2019-11-28 11:54:49,2019-11-28 11:54:50,0.009s,PASSED
+"header2 = new com.kms.katalon.core.testobject.TestObjectProperty(Content-Type, com.kms.katalon.core.testobject.ConditionType.EQUALS, application/json)",,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.001s,PASSED
+"defaultHeaders = Arrays.asList(header1, header2)",,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.008s,PASSED
+"request = findTestObject(""E_Wallet/obj_generateQRLaundry"")",,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.172s,PASSED
+request.setHttpHeaderProperties(defaultHeaders),,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.009s,PASSED
+println(hostname),,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.004s,PASSED
+println(request.getRestUrl()),,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.002s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-11-28 11:54:50,2019-11-28 11:54:50,0.006s,PASSED
+response = sendRequest(request),,,,2019-11-28 11:54:50,2019-11-28 11:54:52,2.465s,PASSED
+body_content = responseBodyContent,,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.009s,PASSED
+status_code = statusCode,,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.016s,PASSED
+out.println(respDataMap),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.003s,PASSED
+println(body_content),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.002s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.036s,PASSED
+out.println(var_expected_rc),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.003s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.003s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.024s,PASSED
+if (result == false),,,,2019-11-28 11:54:52,2019-11-28 11:54:52,0.002s,PASSED
+else,,,,2019-11-28 11:54:52,2019-11-28 11:54:53,0.409s,PASSED

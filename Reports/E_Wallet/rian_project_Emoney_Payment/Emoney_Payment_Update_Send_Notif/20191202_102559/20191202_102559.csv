@@ -1,0 +1,34 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Emoney_Payment_Update_Send_Notif,,,,2019-12-02 10:26:01,2019-12-02 10:26:05,3.926s,INCOMPLETE
+,,,,,,,
+Test Cases/Account/TC_loginCustomer/rian_project_Login_Customer_CICD,,,,2019-12-02 10:26:01,2019-12-02 10:26:03,1.835s,ERROR
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, login_access_code)",,,,2019-12-02 10:26:02,2019-12-02 10:26:03,0.916s,PASSED
+,,,,,,,
+Test Cases/E_Wallet/rian_project_Emoney_Payment/rian_project_Emoney_Payment,,,,2019-12-02 10:26:03,2019-12-02 10:26:05,1.815s,FAILED
+"var_enciphered_pin = SecureUtils.doEncryptPinRsaEwallet(dev_public_pem_file, var_pin)",,,,2019-12-02 10:26:03,2019-12-02 10:26:04,0.213s,PASSED
+partner_token = var_partner_token,,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.001s,PASSED
+plain = <not implemented yet for class: org.codehaus.groovy.ast.expr.EmptyExpression>,,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.001s,PASSED
+"if (model == ""0"")",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.002s,PASSED
+"else if (model == ""1"")",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.003s,PASSED
+out.println(plain),,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.008s,PASSED
+"out.println(""var_customer_token"" + var_customer_token)",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.002s,PASSED
+"out.println(""var_partner_token"" + var_partner_token)",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.002s,PASSED
+"encipheredData = SecureUtils.encryptAesEwallet(plain, var_aes_key)",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.028s,PASSED
+"body = ""{""organisation_id"":"""" + var_organisation_id + """","" + """"data"":"""" + encipheredData + """","" + """"lang"":"""" + var_lang + """"}""",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.001s,PASSED
+out.println(body),,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.001s,PASSED
+"request = findTestObject(""E_Wallet/payment_url"")",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.191s,PASSED
+out.println(request.getRestUrl()),,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.009s,PASSED
+"request.setBodyContent(new com.kms.katalon.core.testobject.impl.HttpTextBodyContent(body, UTF-8, application/json))",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.005s,PASSED
+"if (var_customer_token == ""0"")",,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.001s,PASSED
+else,,,,2019-12-02 10:26:04,2019-12-02 10:26:04,0.009s,PASSED
+response = sendRequest(request),,,,2019-12-02 10:26:04,2019-12-02 10:26:05,1.041s,PASSED
+println(partner_token),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.003s,PASSED
+body_content = responseBodyContent,,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.006s,PASSED
+status_code = statusCode,,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.001s,PASSED
+respDataMap = JsonSlurper().parseText(body_content),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.014s,PASSED
+out.println(respDataMap),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.003s,PASSED
+rc_ref = ReturnCodeWrapper(var_expected_rc).getEnumRC(),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.031s,PASSED
+out.println(var_expected_rc),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.001s,PASSED
+out.println(rc_ref.getRCName()),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.001s,PASSED
+out.println(rc_ref.getHttpResponse()),,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.002s,PASSED
+"result = verifyEqual(response_code, rc_ref.getRCName())",,,,2019-12-02 10:26:05,2019-12-02 10:26:05,0.022s,FAILED
